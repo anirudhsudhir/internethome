@@ -57,6 +57,11 @@ disqusShortname = ''
     name = 'About'
     url = '/about/'
     weight = 30
+  [[Languages.en-gb.menu.main]]
+    pageRef="projects"
+    name = 'Projects'
+    url = '/projects/'
+    weight = 40
 
 [Languages.en-gb.params]
   sitename = "Anirudh Sudhir"
@@ -65,7 +70,7 @@ disqusShortname = ''
   # the default value is set to 'auto'.
   # You can take a look at layouts/index.html for more information.
   description = ""
-  mainSections = ['about']
+  mainSections = ['posts']
   toc = true # set to false to disable table of contents 'globally'
   tocOpen = false # set to true to open table of contents by default
   goToTop = true # set to false to disable 'go to top' button
@@ -84,9 +89,9 @@ disqusShortname = ''
 [Languages.en-gb.params.author]
   avatar = "avatar.jpg" # put the file in assets folder; also ensure that image has same height and width
   # Note: image is not rendered if the resource(avatar image) is not found. No error is displayed.
-  intro = "Anirudh Sudhir"
+  intro = "Hi, I'm Anirudh!"
   name = "Anirudh Sudhir"
-  description = "I'm a computer science student at PES Univeristy."
+  description = "A computer science student and tech enthusiast. Welcome to my home on the internet."
 
 # Allow to override webmanifest options
 [Languages.en-gb.params.webmanifest]
