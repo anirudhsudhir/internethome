@@ -1,0 +1,37 @@
+{{ define "posts"}}
+{{ template "head" .}}
+
+<body>
+
+  <div class="body-container">
+    {{template "header" .}}
+
+    <div class="body">
+
+      <div class="posts">
+
+        <h2>Posts</h2>
+
+        {{range $PostDate, $Post := .Posts}}
+
+        <div class="post-card">
+          <a id="post-link" href="posts/{{$Post.FilenameWithoutExtension}}.html">
+            {{$Post.Frontmatter.Title}}: {{$Post.Frontmatter.Description}}
+          </a>
+          <div class="post-metadata">
+          </div>
+        </div>
+
+        {{end}}
+
+      </div>
+
+    </div>
+
+    {{template "footer" .}}
+  </div>
+</body>
+
+</html>
+
+{{ end}}

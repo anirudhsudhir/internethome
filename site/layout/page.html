@@ -1,0 +1,48 @@
+{{ define "page"}}
+{{ template "head" .}}
+
+<body>
+    <div class="body-container">
+        {{template "header" .}}
+
+        <div class="body">
+
+            {{if eq .Frontmatter.Type "post"}}
+            <h2>{{.Frontmatter.Title}}</h2>
+            {{end}}
+
+            <div class="tags-placeholder">
+
+                {{range .Frontmatter.Tags}}
+                <a href="/tags/{{.}}.html">
+                    {{.}}
+                </a>
+                {{end}}
+            </div>
+
+            <div class="authors-placeholder">
+
+                {{ if ge (len .Frontmatter.Authors) 1}}
+                Authors:
+                {{end}}
+
+                {{range .Frontmatter.Authors}}
+                <span class="author">
+                    {{.}}
+                </span>
+                {{end}}
+
+            </div>
+            {{.Body}}
+
+        </div>
+
+        {{template "footer" .}}
+
+        <script>hljs.highlightAll();</script>
+    </div>
+</body>
+
+</html>
+
+{{ end}}

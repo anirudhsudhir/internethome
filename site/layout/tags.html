@@ -1,0 +1,30 @@
+{{ define "all-tags"}}
+{{ template "head" .}}
+
+<body>
+
+  <div class="body-container">
+    {{template "header" .}}
+
+    <div class="body">
+
+      <div class="all-tags">
+        <h2>Tags</h2>
+        <div class="tags-placeholder">
+          {{range .Tags}}
+          <a href="tags/{{.}}.html">{{.}}</a>
+          {{end}}
+        </div>
+      </div>
+
+    </div>
+
+    {{template "footer" .}}
+
+    <script>hljs.highlightAll();</script>
+  </div>
+</body>
+
+</html>
+
+{{ end}}

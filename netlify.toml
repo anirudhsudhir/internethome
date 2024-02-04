@@ -1,0 +1,28 @@
+[build]
+publish = "site/rendered"
+command = "curl -L https://github.com/acmpesuecc/anna/releases/download/v1.0.0-alpha/anna_Linux_x86_64.tar.gz > anna_Linux_x86.tar.gz;tar -xvzf anna_Linux_x86.tar.gz;./anna"
+
+[[plugins]]
+package = "@netlify/plugin-lighthouse"
+
+# [[redirects]]
+# from = "/*"
+# to = "/404.html"
+# status = 404
+
+# [[headers]]
+# # Define which paths this specific [[headers]] block will cover.
+# for = "/*"
+#
+# [headers.values]
+# X-Frame-Options = "DENY"
+# X-XSS-Protection = "1; mode=block"
+# Content-Security-Policy = "frame-ancestors https://www.facebook.com"
+#
+# # Default build command.
+# # Multi-value headers are expressed with multi-line strings.
+# cache-control = '''
+#   max-age=0,
+#   no-cache,
+#   no-store,
+#   must-revalidate'''

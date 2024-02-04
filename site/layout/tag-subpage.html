@@ -1,0 +1,30 @@
+{{ define "tag-subpage"}}
+{{ template "head" .}}
+
+<body>
+
+  <div class="body-container">
+    {{template "header" .}}
+
+    <div class="body">
+
+      <div class="tagged-posts">
+        <h2>Posts tagged "{{.Frontmatter.Title}}"</h2>
+        <div class="tags-placeholder">
+          {{range .SpecificTagTemplates}}
+          <a href="/{{.CompleteURL}}">{{.Frontmatter.Title}}</a>
+          {{end}}
+        </div>
+      </div>
+
+    </div>
+
+    {{template "footer" .}}
+
+    <script>hljs.highlightAll();</script>
+  </div>
+</body>
+
+</html>
+
+{{ end}}

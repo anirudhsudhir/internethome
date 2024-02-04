@@ -1,0 +1,214 @@
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Qapture</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <link rel="stylesheet" href="/static/style.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/tokyo-night-dark.min.css">
+
+    <script data-goatcounter="https://overuse2015.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+    <link rel="alternate" type="application/atom+xml" title="feed" href="/feed.atom">
+
+    
+
+    
+    <script src="/static/scripts/theme.js" defer></script>
+    
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Qapture">
+    <meta property="og:description" content="A talk I gave at my university">
+    <meta property="og:image" content="">
+
+</head>
+
+
+<body>
+    <div class="body-container">
+        
+<header>
+    <nav>
+         
+        <a href="/">home</a>
+          
+        <a href="/posts.html">posts</a>
+          
+        <a href="/timeline.html">timeline</a>
+          
+        <a href="/tags.html">tags</a>
+          
+        <a href="/projects.html">projects</a>
+         
+        <div class="theme-toggle-div">
+            <img id="theme-toggle" src="/static/icons/dark-toggle.svg" />
+        </div>
+    </nav>
+</header>
+
+<form class="siteSearch" id="searchSite">
+    <input type="text" placeholder="Search Site" id="searchSiteInput" name="searchSite" required autocomplete="off" />
+</form>
+<div id="site_search_result"></div>
+<script>
+    var resultDiv = document.getElementById("site_search_result");
+    document
+        .getElementById("searchSite")
+        .addEventListener("keyup", function (e) {
+            e.preventDefault();
+            const searchValue =
+                document.getElementById("searchSiteInput").value;
+
+            const url = "/static/index.json";
+
+            fetch(url)
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error("Network response was not ok");
+                    }
+                    return response.json();
+                })
+                .then((data) => {
+                    resultDiv.innerHTML = "";
+                    found = 0;
+                    if (searchValue != "") {
+                        for (key in data) {
+                            found += 1;
+                            title =
+                                data[key]["Frontmatter"]["Title"].toLowerCase();
+                            if (title.includes(searchValue.toLowerCase())) {
+                                var a = document.createElement("a");
+                                a.innerHTML = data[key]["Frontmatter"]["Title"];
+                                a.href = `/${data[key]["CompleteURL"]}`;
+                                resultDiv.appendChild(a);
+                                resultDiv.appendChild(
+                                    document.createElement("br"),
+                                );
+                            }
+                        }
+                    } else {
+                        document.getElementById("site_search_result").innerHTML = "";
+                    }
+                })
+                .catch((error) => {
+                    
+                    console.error(
+                        "There was a problem with the fetch operation:",
+                        error,
+                    );
+                });
+        });
+</script>
+
+
+
+        <div class="body">
+
+            
+            <h2>Qapture</h2>
+            
+
+            <div class="tags-placeholder">
+
+                
+                <a href="/tags/c.html">
+                    c
+                </a>
+                
+                <a href="/tags/hsp.html">
+                    hsp
+                </a>
+                
+                <a href="/tags/talks.html">
+                    talks
+                </a>
+                
+                <a href="/tags/tech.html">
+                    tech
+                </a>
+                
+            </div>
+
+            <div class="authors-placeholder">
+
+                
+
+                
+
+            </div>
+            <p>This post is part of a talk I gave at the Mentor Expo conducted by <a href="https://homebrew.hsp-ec.xyz">HSP</a>, the developer community at my college. I delivered the talk on 23rd November, 2023.</p>
+<h3>About</h3>
+<p>qapture is a CLI tool to recover deleted JPEGs from a forensic image.</p>
+<p><a href="https://github.com/anirudhsudhir/qapture">Link to the repo</a></p>
+<h3>Background</h3>
+<p>When a file is deleted, it is removed from the file tree structure. However, the individual bytes remain in memory until they are overwritten by the OS.</p>
+<p>This implies that if all of the individual bytes are read from memory and pieced together in the right order and format, the file could be recovered in certain cases.</p>
+<h3>What’s a forensic image?</h3>
+<p>Forensic images are exact copies or replicas of digital storage media, typically created for the purpose of preserving and analyzing digital evidence. There are several types of forensic images such as RAW images, dd (Disk Dump) images and EO1(Encase) images.</p>
+<p>qapture uses the RAW image format since it contains a bit-by-bit copy of the entire storage medium. The metadata associated with the disk or the files are stored separately, simplifying recovery.</p>
+<p><img src="/static/images/posts/qapture/qapture_ForensicImage.png" alt="Schematic of a forensic image"></p>
+<h3>How JPEGs are stored in memory</h3>
+<p>A JPEG file is divided into segments, each starting with a marker. Markers are two bytes long and start with 0xFF. Some markers define segments that contain specific information about the image, such as the image dimensions, color space information, and more.</p>
+<p>Of these, the SOI(Start of image) along with the APPn(Application specific codes) and EOI(End of image) markers are the ones that denote the beginning and end of the JPEG file.</p>
+<p>These markers are represented by various hexadecimal codes:</p>
+<ul>
+<li>SOI - 0xFF(255), 0xD8(216)</li>
+<li>APPn - 0xFF(255), 0xEn(224 to 239) (where n represents any hexadecimal digit)</li>
+<li>EOI - 0xFF(255), 0xD9(217)</li>
+</ul>
+<p><img src="/static/images/posts/qapture/qapture_SegmentedMarkers.png" alt="Segmented view of various markers in a JPEG file"></p>
+<h3>Block Size</h3>
+<p>Block size refers to the minimum amount of data that can be stored or retrieved at a time. When a file is created, the file system allocates space for it in terms of blocks. The file's data is then divided into chunks accordingly. Even if a particular block is not completely used, the next file is stored in the following one, with the remaining free space in the current block called slack space. Block sizes vary depending upon the filesystem. For example, the FAT filesystem usually utilizes 512 bytes per block.</p>
+<p>Blocks are highly important as they drastically increase the speed of any file IO operation.</p>
+<p><img src="/static/images/posts/qapture/qapture_BlocksFS.png" alt="Files stored as Blocks"></p>
+<h3>How qapture works</h3>
+<p>qapture is a CLI tool.
+The user runs it by passing the path to the RAW image as an argument.</p>
+<pre><code class="language-sh">./qapture PATH_TO_IMAGE.raw
+</code></pre>
+<p>qapture checks if a valid path is provided and prompts the user for the block size of the RAW image. It then reads <strong>X</strong> bytes of the image, where <strong>X</strong> corresponds to the block size, and stores it in an array.</p>
+<p>It searches the block for a new JPEG by checking if:</p>
+<ul>
+<li>the first two bytes are 255(0xFF) and 216(0xD8) (indicating SOI)</li>
+<li>the third byte is 255 (0xFF) and the fourth is between 224 and 239 (0xEn) (indicating APPn)</li>
+</ul>
+<p>If these conditions are satisfied, it writes the array to a new JPEG file in the binary format.</p>
+<p>While writing the array to the file, qapture checks if the current and the following byte is 255(0xFF) and 217(0xD9) respectively (indicating EOI).</p>
+<ul>
+<li>
+<p>If an EOI is encountered, the EOI marker is written and file is closed.
+qapture then reads the following block from the RAW image.</p>
+</li>
+<li>
+<p>If no EOI is encountered, qapture writes the entire array to the JPEG and reads the following block.</p>
+</li>
+</ul>
+<p>This process continues until all of the RAW image is read.</p>
+<p><img src="/static/images/posts/qapture/qapture_Working.png" alt="Schematic depicting how qapture functions"></p>
+<p>Once the entire image is read, qapture prints the number of JPEGs which have been successfully recovered.
+These JPEGs are stored in an 'images' directory created by the application within the project directory.</p>
+
+
+        </div>
+
+        
+<footer>
+  Generated using <a href="https://github.com/acmpesuecc/anna">Anna</a> :)
+</footer>
+
+
+        <script>hljs.highlightAll();</script>
+    </div>
+</body>
+
+</html>
+

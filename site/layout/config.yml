@@ -1,0 +1,15 @@
+navbar:
+    - index
+    - posts
+    - timeline
+    - tags
+    - projects
+
+baseURL: https://sudhir.live/
+
+siteTitle: Anirudh Sudhir
+
+siteScripts:
+  - theme.js
+
+author: Anirudh Sudhir
