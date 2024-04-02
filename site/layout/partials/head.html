@@ -7,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{.Frontmatter.Title}}</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <link rel="stylesheet" href="/static/water.css">
     <link rel="stylesheet" href="/static/style.css">
 
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
     <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/tokyo-night-dark.min.css">
+        href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/base-16-gruvbox-dark-hard.min.css">
 
     <script data-goatcounter="https://overuse2015.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
@@ -30,6 +30,8 @@
     <meta property="og:title" content="{{ .Frontmatter.Title }}">
     <meta property="og:description" content="{{ .Frontmatter.Description }}">
     <meta property="og:image" content="{{ .Frontmatter.PreviewImage }}">
+
+    <meta name="description" content="{{ .Frontmatter.Description }}">
 
 </head>
 {{end}}
