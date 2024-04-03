@@ -2,7 +2,10 @@
 title: Genesis
 date: 2024-03-08
 type: post
-description: My first post
+description: >
+    A webpage part of sudhir.live, the personal site of Anirudh Sudhir, 
+    an undergraduate computer science student at PES University, Bangalore.
+    This page contains the first or genesis post of this site.
 tags:
     - thoughts
 ---

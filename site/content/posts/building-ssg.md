@@ -1,13 +1,22 @@
 ---
-title: Anna
+title: Anna - A static site generator built in Go
 date: 2024-03-29
 type: post
-description: Building a static site generator in Go
 draft: true
+description: >
+    A webpage part of sudhir.live, the personal site of Anirudh Sudhir, 
+    an undergraduate computer science student at PES University, Bangalore.
+    This page contains a post about anna, a static site generator written in Go,
+    as part of AIEP. This was a team project.
 tags:
   - acm
   - go
   - tech
+authors:
+  - Adhesh
+  - Aditya
+  - Nathan
+  - Anirudh
 ---
 
 Building personal blogs from the ground up can be a tedious process. Some of us have had our hands deep in vanilla HTML and CSS, which isn't fun to maintain.

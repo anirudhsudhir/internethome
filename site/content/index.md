@@ -1,6 +1,10 @@
 ---
 title: Home
 date: 2024-02-24
+description: >
+    The homepage of sudhir.live, the personal site of Anirudh Sudhir, 
+    an undergraduate computer science student at PES University, Bangalore.
+    This is the index page of the internethome.
 ---
 
 ## Hello! I'm Anirudh
