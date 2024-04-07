@@ -20,19 +20,6 @@
                 {{end}}
             </div>
 
-            <div class="authors-placeholder">
-
-                {{ if ge (len .Frontmatter.Authors) 1}}
-                Authors:
-                {{end}}
-
-                {{range .Frontmatter.Authors}}
-                <span class="author">
-                    {{.}}
-                </span>
-                {{end}}
-
-            </div>
             {{.Body}}
 
         </div>
