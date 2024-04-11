@@ -1,28 +1,13 @@
 :root {
-    /* Light mode variables */
-    /* --background-light: #f9f1cb;
-    --primary-colour-light: #ac792e;
-    --font-colour-light: #282828;
-    --links-colour-light:var(--primary-colour-light) ;
-    --headings-colour-light: var(--primary-colour-light); */
-
-    /* Tag background and font colours are same as dark mode currently */
-    /* --tag-background-light: #eee2be;
-    --tag-font-colour-light: var(--primary-colour-light); */
-
-    /* Dark mode variables */
-    /* --background-dark: #1e2021;
-    --primary-colour-dark: #f0bf4f;
-    --font-colour-dark: #f9f1cb;
-    --links-colour-dark: var(--primary-colour-dark);
-    --headings-colour-dark: var(--primary-colour-dark);
-    --tag-background-dark: #3b3836;
-    --tag-font-colour-dark: var(--primary-colour-dark); */
-
-    --background: #1e2021;
+    /* --background: #1e2021;
     --primary-colour: #f0bf4f;
     --font-colour: #f9f1cb;
-    --tag-background: #3b3836;
+    --tag-background: #3b3836; */
+
+    --background: #121212;
+    --primary-colour: #BB86FC;
+    --font-colour: #ffffff;
+    --tag-background: #1f1f1f;
 
     --links-colour: var(--primary-colour);
     --headings-colour: var(--primary-colour);
@@ -30,18 +15,30 @@
 
     /* Water CSS variables */
     --background-body: var(--background);
+    --background: var(--background);
+    /* --background-alt: ; */
+    /* --selection: var(--primary-colour); */
+    --text-main: ;
+    --text-bright: ;
+    --text-muted: ;
     --links: var(--links-colour);
-    --selection: var(--primary-colour);
-    --highlight: var(--primary-colour);
     --focus: var(--primary-colour);
-
-    /* Background SVG */
-    background-color: var(--background);
+    --border: var(--primary-colour);
+    --code: var(--primary-colour);
+    /* --animation-duration: ; */
+    --button-hover: ;
+    --scrollbar-thumb: ;
+    --scrollbar-thumb-hover: ;
+    --form-placeholder: ;
+    --form-text: ;
+    --variable: var(--primary-colour);
+    --highlight: var(--primary-colour);
+    --select-arrow: var(--primary-colour);
 }
 
 body {
     color: var(--font-colour);
-    background-color: rgb(0 0 0/0%);
+    background-color: var(--background);
 }
 
 .body-container {
@@ -134,7 +131,7 @@ svg {
     height: 20px;
     width: auto;
     cursor: pointer;
-    display: ht: auto;
+    display: auto;
 }
 
 .tags-placeholder {
