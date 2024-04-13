@@ -13,7 +13,7 @@ tags:
   - hsp
   - go
   - tech
-  - talk
+  - talks
   - aiep
 ---
 
