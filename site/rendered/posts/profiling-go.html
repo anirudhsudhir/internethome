@@ -1,0 +1,252 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profiling with Go</title>
+
+    <link rel="stylesheet" href="/static/water.css">
+    <link rel="stylesheet" href="/static/style.css">
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+    <script defer src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css" />
+    <link rel="alternate" type="application/atom+xml" title="feed" href="/feed.xml" />
+
+    <script data-goatcounter="https://overuse2015.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+    
+    
+    <script>
+        const eventSource = new EventSource('http://localhost:8000/events');
+        eventSource.onmessage = function (event) {
+            location.reload()
+        };
+    </script>
+    
+
+
+    
+    
+    <script src="/static/scripts/theme.js" defer></script>
+    
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Profiling with Go">
+    <meta property="og:description" content="A webpage part of sudhir.live, the personal site of Anirudh Sudhir, an undergraduate computer science student at PES University, Bangalore. This page contains a post about profiling with Go. These notes are from a talk during a Go meetup.">
+    <meta property="og:image" content="">
+
+    <meta name="description" content="A webpage part of sudhir.live, the personal site of Anirudh Sudhir, an undergraduate computer science student at PES University, Bangalore. This page contains a post about profiling with Go. These notes are from a talk during a Go meetup.">
+
+    <script defer>
+        hljs.highlightAll();
+        hljs.addPlugin(new CopyButtonPlugin());
+    </script>
+</head>
+
+
+<body>
+    <div class="body-container">
+        
+
+
+
+
+<header>
+    <nav>
+        
+        
+        
+        <a href="/">home</a>
+        
+        
+        
+        
+        
+        <a href="/posts.html">posts</a>
+        
+        
+        
+        
+        
+        <a href="/timeline.html">timeline</a>
+        
+        
+        
+        
+        
+        <a href="/tags.html">tags</a>
+        
+        
+        
+        
+        
+        <a href="/projects.html">projects</a>
+        
+        
+    </nav>
+
+    <div class="theme-and-search">
+
+        
+<form class="siteSearch" id="searchSite">
+    <input type="text" placeholder="Search Site" id="searchSiteInput" name="searchSite" required autocomplete="off" />
+</form>
+<div id="site_search_result"></div>
+<script>
+    var resultDiv = document.getElementById("site_search_result");
+    document
+        .getElementById("searchSite")
+        .addEventListener("keyup", function (e) {
+            e.preventDefault();
+            const searchValue =
+                document.getElementById("searchSiteInput").value;
+
+            const url = "/static/index.json";
+
+            fetch(url)
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error("Network response was not ok");
+                    }
+                    return response.json();
+                })
+                .then((data) => {
+                    resultDiv.innerHTML = "";
+                    found = 0;
+                    if (searchValue != "") {
+                        for (key in data) {
+                            found += 1;
+                            title =
+                                data[key]["Frontmatter"]["Title"].toLowerCase();
+                            if (title.includes(searchValue.toLowerCase())) {
+                                var a = document.createElement("a");
+                                a.innerHTML = data[key]["Frontmatter"]["Title"];
+                                a.href = `/${data[key]["CompleteURL"]}`;
+                                resultDiv.appendChild(a);
+                                resultDiv.appendChild(
+                                    document.createElement("br"),
+                                );
+                            }
+                        }
+                    } else {
+                        document.getElementById("site_search_result").innerHTML = "";
+                    }
+                })
+                .catch((error) => {
+                    
+                    console.error(
+                        "There was a problem with the fetch operation:",
+                        error,
+                    );
+                });
+        });
+</script>
+
+
+        
+        <div class="theme-toggle-div">
+            <img id="theme-toggle" src="/static/icons/theme-toggle-purple.svg" alt="Theme Toggle Button" />
+        </div>
+    </div>
+
+</header>
+
+        <div class="body">
+
+            <article>
+                
+                <h2>Profiling with Go</h2>
+                
+
+                <div class="tags-placeholder">
+                    
+                    <a href="/tags/go.html">
+                        go
+                    </a>
+                    
+                    <a href="/tags/tech.html">
+                        tech
+                    </a>
+                    
+                    <a href="/tags/meetup.html">
+                        meetup
+                    </a>
+                    
+                    <a href="/tags/perf.html">
+                        perf
+                    </a>
+                    
+                </div>
+
+                <p>This post is about the first talk of the Go meetup on 13th April, 2024 in Bangalore.
+This was a hand-on session, where the speaker used various profiling techniques to improve the performance of a sample application.</p>
+<h2>Introduction</h2>
+<p>The Go standard library has several built-in mechanisms for profiling:</p>
+<ol>
+<li>Using <a href="https://pkg.go.dev/net/http/pprof">net/http/pprof</a> as a blank import to profile a running application (such as a backend service)</li>
+<li>Using various profiling flags present in the go test command</li>
+<li>Utilising the <a href="https://pkg.go.dev/runtime/pprof">runtime/pprof</a> library to profile a certain block of code</li>
+</ol>
+<h3>Using net/http/pprof as a blank import</h3>
+<p>On performing a blank import of net/http/pprof, Go automatically attaches a debug/pprof endpoint to the application.
+This endpoint contains an interactive web console which can be used to analyse the live profile data.</p>
+<h3>Using various profiling flags present in the go test command</h3>
+<p>The go test command has several flags to profile an application. During the talk, the following two were covered:</p>
+<ul>
+<li><code>benchmem</code> - Prints memory allocations for benchmarks</li>
+<li><code>cpuprofile file</code> - Writes a cpu profile to file</li>
+</ul>
+<p>Usage</p>
+<pre><code class="language-sh">go test -bench . -benchmem -cpuprofile pprof.cpu
+</code></pre>
+<p>The cpuprofile flag generates a binary and a file that can analysed using pprof.</p>
+<pre><code class="language-sh">go tool pprof app.test pprof.cpu
+</code></pre>
+<h2>Walkthrough</h2>
+<p>The demo used for the talk was a simple application that returned the user agent and latency of the endpoint.
+During the load test of the initial version using wrk, it handled an average of 33,000 requests per second. While impressive, this number could be improved.</p>
+<p>The speaker first performed a benchmark using <code>net/http/pprof</code> to identify possible bottlenecks. Using <code>go tool pprof -seconds &lt;duration&gt; -http &lt;profiling_url&gt; &lt;debug/pprof/profile_url_endpoint&gt;</code>, the profile of the application can be generated.
+The data can be visualised in different forms, such as a graph or a flame graph.</p>
+<p>During the session, the regular graph was used.
+It displayed the total runtime of each function call, the number of times it was invoked and other useful details.</p>
+<p>A lot of time was taken by os.Hostname() present in the handler function. The os.Hostname() function retrieves the hostname of the machine, which is a syscall. By moving the call outside of the handler and invoking it just once, the total runtime of the function reduced from 2s to 0.2s.</p>
+<p><img src="/static/images/posts/profiling-go/pprof_debug_profile_graph.jpeg" alt="Image of the profile graph generated by pprof"></p>
+<p>The next step was to use the profiling flags present in the go test command to understand the time taken during different operations. By using the<code>cpuprofile file</code> flag, the profile will be written to a file for further analysis.</p>
+<p><img src="/static/images/posts/profiling-go/go_test_flags.jpeg" alt="Image of the generation of the cpuprofile file"></p>
+<p>As seen above, the memory allocation for the benchmark is printed to stdout. Here, the application performed 12 allocations for a total of 447 bytes per operation.
+The <code>go tool pprof &lt;binary_name&gt; &lt;profile_file&gt;</code> command starts an interactive application. Commands such as <code>web</code> and <code>disasm</code> can be used to understand different parts of the profile.</p>
+<p>The <code>list &lt;function_name&gt;</code> command displays the time time taken by certain operations of the particular function.</p>
+<p><img src="/static/images/posts/profiling-go/pprof_line_time.jpeg" alt="Image of the time taken by various operations, analysed using pprof"></p>
+<p>The <code>disasm &lt;function&gt;</code> command shows the assembly code of the function along with the time taken by some operations.</p>
+<p><img src="/static/images/posts/profiling-go/pprof_line_asm_time.jpeg" alt="Image of the assembly of the handler function"></p>
+<p>The analysis of the results revealed that string slice appends were consuming most of the time. These operations involve repeated memory allocations to increase the slice capacity.</p>
+<p>As the string slice was returned at the end of the function, a string buffer could be utilised to store and append the contents of the response. By creating a bytes.Buffer and using WriteString() to add contents to it, the number of allocations and time taken could be reduced.</p>
+<p>Lastly, the number of allocation of bytes.Buffer objects could be reduced by using a sync.Pool. A sync.Pool is a type that holds a set of temporary objects.
+These objects can be reused later, leading to fewer allocations. The pros of using a sync.Pool outweigh the cons as a bytes.Buffer object created during one request could be reused later.</p>
+<p>After all of these optimisations, each operation took about 520ns, a huge improvement from the 716ns reported by the initial benchmark.</p>
+
+
+            </article>
+        </div>
+
+        
+<footer>
+  Powered by <a href="https://github.com/acmpesuecc/anna">Anna</a> :)
+</footer>
+
+
+    </div>
+</body>
+
+</html>
+

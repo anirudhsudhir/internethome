@@ -1,0 +1,185 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+
+    <link rel="stylesheet" href="/static/water.css">
+    <link rel="stylesheet" href="/static/style.css">
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+    <script defer src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css" />
+    <link rel="alternate" type="application/atom+xml" title="feed" href="/feed.xml" />
+
+    <script data-goatcounter="https://overuse2015.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+    
+    
+
+
+    
+    
+    <script src="/static/scripts/theme.js" defer></script>
+    
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+
+    <meta name="description" content="">
+
+    <script defer>
+        hljs.highlightAll();
+        hljs.addPlugin(new CopyButtonPlugin());
+    </script>
+</head>
+
+
+<body>
+  <div class="body-container">
+
+    
+
+
+
+
+<header>
+    <nav>
+        
+        
+        
+        <a href="/">home</a>
+        
+        
+        
+        
+        
+        <a href="/posts.html">posts</a>
+        
+        
+        
+        
+        
+        <a href="/timeline.html">timeline</a>
+        
+        
+        
+        
+        
+        <a href="/tags.html">tags</a>
+        
+        
+        
+        
+        
+        <a href="/projects.html">projects</a>
+        
+        
+    </nav>
+
+    <div class="theme-and-search">
+
+        
+<form class="siteSearch" id="searchSite">
+    <input type="text" placeholder="Search Site" id="searchSiteInput" name="searchSite" required autocomplete="off" />
+</form>
+<div id="site_search_result"></div>
+<script>
+    var resultDiv = document.getElementById("site_search_result");
+    document
+        .getElementById("searchSite")
+        .addEventListener("keyup", function (e) {
+            e.preventDefault();
+            const searchValue =
+                document.getElementById("searchSiteInput").value;
+
+            const url = "/static/index.json";
+
+            fetch(url)
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error("Network response was not ok");
+                    }
+                    return response.json();
+                })
+                .then((data) => {
+                    resultDiv.innerHTML = "";
+                    found = 0;
+                    if (searchValue != "") {
+                        for (key in data) {
+                            found += 1;
+                            title =
+                                data[key]["Frontmatter"]["Title"].toLowerCase();
+                            if (title.includes(searchValue.toLowerCase())) {
+                                var a = document.createElement("a");
+                                a.innerHTML = data[key]["Frontmatter"]["Title"];
+                                a.href = `/${data[key]["CompleteURL"]}`;
+                                resultDiv.appendChild(a);
+                                resultDiv.appendChild(
+                                    document.createElement("br"),
+                                );
+                            }
+                        }
+                    } else {
+                        document.getElementById("site_search_result").innerHTML = "";
+                    }
+                })
+                .catch((error) => {
+                    
+                    console.error(
+                        "There was a problem with the fetch operation:",
+                        error,
+                    );
+                });
+        });
+</script>
+
+
+        
+        <div class="theme-toggle-div">
+            <img id="theme-toggle" src="/static/icons/theme-toggle-purple.svg" alt="Theme Toggle Button" />
+        </div>
+    </div>
+
+</header>
+
+
+    <div class="body">
+      <article>
+        <div class="tagged-posts">
+          <h2>Posts tagged "thoughts"</h2>
+          <div class="tags-placeholder">
+
+            
+            
+            <a href="/posts/genesis.html">Genesis</a>
+            
+
+          </div>
+        </div>
+      </article>
+    </div>
+
+    
+<footer>
+  Powered by <a href="https://github.com/acmpesuecc/anna">Anna</a> :)
+</footer>
+
+
+  </div>
+</body>
+
+</html>
+

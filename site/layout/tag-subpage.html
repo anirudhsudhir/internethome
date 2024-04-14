@@ -1,27 +1,30 @@
 {{ define "tag-subpage"}}
+{{$PageData := index .DeepDataMerge.Tags .PageURL}}
 {{ template "head" .}}
 
 <body>
-
   <div class="body-container">
+
     {{template "header" .}}
 
     <div class="body">
+      <article>
+        <div class="tagged-posts">
+          <h2>Posts tagged "{{$PageData.Frontmatter.Title}}"</h2>
+          <div class="tags-placeholder">
 
-      <div class="tagged-posts">
-        <h2>Posts tagged "{{.Frontmatter.Title}}"</h2>
-        <div class="tags-placeholder">
-          {{range .SpecificTagTemplates}}
-          <a href="/{{.CompleteURL}}">{{.Frontmatter.Title}}</a>
-          {{end}}
+            {{$TagSet := index .DeepDataMerge.TagsMap .PageURL}}
+            {{range $TagSet }}
+            <a href="/{{.CompleteURL}}">{{.Frontmatter.Title}}</a>
+            {{end}}
+
+          </div>
         </div>
-      </div>
-
+      </article>
     </div>
 
     {{template "footer" .}}
 
-    <script>hljs.highlightAll();</script>
   </div>
 </body>
 

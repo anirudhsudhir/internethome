@@ -1,34 +1,31 @@
 {{ define "posts"}}
+{{$PageData := .TemplateData}}
 {{ template "head" .}}
 
 <body>
-
   <div class="body-container">
+
     {{template "header" .}}
 
     <div class="body">
+      <article>
+        <div class="posts">
+          <h2>Posts</h2>
 
-      <div class="posts">
-
-        <h2>Posts</h2>
-
-        {{range $PostDate, $Post := .Posts}}
-
-        <div class="post-card">
-          <a id="post-link" href="posts/{{$Post.FilenameWithoutExtension}}.html">
-            {{$Post.Frontmatter.Title}}
-          </a>
-          <div class="post-metadata">
+          {{range $PostDate, $Post := .DeepDataMerge.Posts}}
+          <div class="post-card">
+            <a id="post-link" href="{{$Post.CompleteURL}}">
+              {{$Post.Frontmatter.Title}}
+            </a>
           </div>
+          {{end}}
+
         </div>
-
-        {{end}}
-
-      </div>
-
+      </article>
     </div>
 
     {{template "footer" .}}
+
   </div>
 </body>
 

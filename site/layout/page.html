@@ -1,32 +1,32 @@
 {{ define "page"}}
+{{$PageData := index .DeepDataMerge.Templates .PageURL}}
 {{ template "head" .}}
 
 <body>
     <div class="body-container">
         {{template "header" .}}
-
         <div class="body">
 
-            {{if eq .Frontmatter.Type "post"}}
-            <h2>{{.Frontmatter.Title}}</h2>
-            {{end}}
-
-            <div class="tags-placeholder">
-
-                {{range .Frontmatter.Tags}}
-                <a href="/tags/{{.}}.html">
-                    {{.}}
-                </a>
+            <article>
+                {{if eq $PageData.Frontmatter.Type "post"}}
+                <h2>{{$PageData.Frontmatter.Title}}</h2>
                 {{end}}
-            </div>
 
-            {{.Body}}
+                <div class="tags-placeholder">
+                    {{range $PageData.Frontmatter.Tags}}
+                    <a href="/tags/{{.}}.html">
+                        {{.}}
+                    </a>
+                    {{end}}
+                </div>
 
+                {{$PageData.Body}}
+
+            </article>
         </div>
 
         {{template "footer" .}}
 
-        <script>hljs.highlightAll();</script>
     </div>
 </body>
 

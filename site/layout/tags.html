@@ -1,27 +1,34 @@
 {{ define "all-tags"}}
+{{$PageData := .TemplateData}}
 {{ template "head" .}}
 
 <body>
-
   <div class="body-container">
+
     {{template "header" .}}
 
     <div class="body">
+      <article>
+        <div class="all-tags">
+          <h2>Tags</h2>
+          <div class="tags-placeholder">
 
-      <div class="all-tags">
-        <h2>Tags</h2>
-        <div class="tags-placeholder">
-          {{range .Tags}}
-          <a href="tags/{{.}}.html">{{.}}</a>
-          {{end}}
+            {{range .TagNames}}
+            <a href="tags/{{.}}.html">{{.}}</a>
+            {{end}}
+
+          </div>
         </div>
-      </div>
 
+        <div id="chart"></div>
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <script src="/static/scripts/graph.js"></script>
+
+      </article>
     </div>
 
     {{template "footer" .}}
 
-    <script>hljs.highlightAll();</script>
   </div>
 </body>
 
