@@ -1,96 +1,44 @@
 :root {
-    /* --background: #1e2021;
-    --primary-colour: #f0bf4f;
-    --font-colour: #f9f1cb;
-    --tag-background: #3b3836; */
-
-    --background: #121212;
-    --primary-colour: #BB86FC;
-    --font-colour: #ffffff;
-    --tag-background: #1f1f1f;
-
-    --links-colour: var(--primary-colour);
-    --headings-colour: var(--primary-colour);
-    --tag-font-colour: var(--primary-colour);
-
-    /* Water CSS variables */
-    --background-body: var(--background);
-    --background: var(--background);
-    /* --background-alt: ; */
-    /* --selection: var(--primary-colour); */
-    --text-main: ;
-    --text-bright: ;
-    --text-muted: ;
-    --links: var(--links-colour);
-    --focus: var(--primary-colour);
-    --border: var(--primary-colour);
-    --code: var(--primary-colour);
-    /* --animation-duration: ; */
-    --button-hover: ;
-    --scrollbar-thumb: ;
-    --scrollbar-thumb-hover: ;
-    --form-placeholder: ;
-    --form-text: ;
-    --variable: var(--primary-colour);
-    --highlight: var(--primary-colour);
-    --select-arrow: var(--primary-colour);
+    --background: #FFFFFF;
+    --primary-colour: #701adb;
+    --font-colour: #000000;
+    --tag-background: #f1f1f1;
 
     /* Graph variables */
     --color-text: var(--font-colour);
     --color-text-dim: var(--font-colour)
 }
 
-body {
-    color: var(--font-colour);
-    background-color: var(--background);
+@font-face {
+    font-family: Inter;
+    src: url(/static/fonts/Inter-Regular.ttf);
 }
 
-.body-container {
-    background-color: var(--background);
+* {
+    box-sizing: border-box;
 }
-
-.tags-placeholder a {
-    background-color: var(--tag-background);
-    color: var(--tag-font-colour);
-    border: 0.1em solid var(--tag-background);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    color: var(--headings-colour);
-}
-
-#searchSiteInput {
-    border: 1px var(--primary-colour) solid;
-    color: var(--font-colour);
-}
-
-#searchSiteInput::placeholder {
-    color: var(--font-colour);
-}
-
-/* Layout styles */
 
 body {
-    min-height: 90vh;
-    margin: 1em auto;
+    margin: 0;
+    height: 100vh;
 
-    padding: 1em 1em;
-    line-height: 1.7em;
     font-size: 1.1rem;
+    font-family: 'Inter', sans-serif;
+
+    color: var(--font-colour);
+    background-color: var(--background);
 }
 
 .body-container {
-    min-height: 90vh;
-
-    padding: 1em 2em;
+    margin: auto;
+    padding: 30px 0 0;
+    width: 650px;
+    height: 100%;
 
     display: flex;
     flex-direction: column;
+
+    background-color: var(--background);
 }
 
 header,
@@ -99,15 +47,18 @@ footer {
 }
 
 footer {
+    padding: 10px 0 10px;
     color: var(--font-colour);
     text-align: center;
 }
 
 .body {
     flex: 1 0 auto;
+    line-height: 1.7em;
 }
 
 a {
+    color: var(--primary-colour);
     text-decoration: underline;
 }
 
@@ -118,29 +69,37 @@ nav {
     text-align: center;
 }
 
-
-.theme-and-search {
+.search {
     margin-top: 10px;
     display: flex;
+    flex-direction: column;
 }
 
-.theme-toggle-div {
+#searchSiteInput {
+    padding: 5px;
+
+    border: 3px var(--primary-colour) solid;
+    border-radius: 5px;
+    color: var(--font-colour);
+}
+
+#searchSiteInput:focus-visible {
+    border: 4px var(--primary-colour) solid;
+    border-radius: 5px;
+    color: var(--font-colour);
+    padding: 5px;
+}
+
+#searchSiteInput::placeholder {
+    color: var(--font-colour);
+}
+
+#site_search_result {
+    margin-top: 10px;
+
     display: flex;
-    align-items: center;
-    margin-left: auto;
-    margin-right: 20px;
-}
-
-svg {
-    width: 100%;
-    height: auto;
-}
-
-#theme-toggle {
-    height: 20px;
-    width: auto;
-    cursor: pointer;
-    display: auto;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .tags-placeholder {
@@ -155,6 +114,10 @@ svg {
     border-radius: 5px;
 
     padding: 0.2em;
+
+    background-color: var(--tag-background);
+    color: var(--primary-colour);
+    border: 0.1em solid var(--tag-background);
 }
 
 .post-card {
@@ -169,15 +132,48 @@ svg {
     text-decoration: underline;
 }
 
+img {
+    width: 550px;
+    height: auto;
+}
+
+svg {
+    width: 100%;
+    height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--primary-colour);
+}
+
+blockquote {
+    border-left: 5px var(--primary-colour) solid;
+    margin-left: 0;
+    padding: 10px;
+    padding-left: 20px;
+}
+
 @media (max-width: 650px) {
     body {
-        margin: 1em 0.5em;
-        padding: 0 0;
-
         font-size: 1rem;
     }
 
     .body-container {
-        padding: 1em 1em;
+        width: 300px;
+    }
+
+    nav {
+        gap: 0.5em;
+        font-size: 1.1rem;
+    }
+
+    img {
+        width: 280px;
+        height: auto;
     }
 }

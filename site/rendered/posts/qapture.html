@@ -13,12 +13,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Qapture - Recover deleted JPEGs from a forensic image</title>
 
-    <link rel="stylesheet" href="/static/water.css">
+    
     <link rel="stylesheet" href="/static/style.css">
 
     
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
-    <script defer src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/tokyo-night-dark.min.css">
+
+    <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css" />
     <link rel="alternate" type="application/atom+xml" title="feed" href="/feed.xml" />
 
@@ -37,8 +40,6 @@
 
     
     
-    <script src="/static/scripts/theme.js" defer></script>
-    
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="Qapture - Recover deleted JPEGs from a forensic image">
@@ -49,10 +50,6 @@
     <meta name="description" content="A webpage part of sudhir.live, the personal site of Anirudh Sudhir,  an undergraduate computer science student at PES University, Bangalore. This page contains a post about qapture, a CLI tool to recover deleted JPEGs from a forensic image, written in C.
 ">
 
-    <script defer>
-        hljs.highlightAll();
-        hljs.addPlugin(new CopyButtonPlugin());
-    </script>
 </head>
 
 
@@ -97,8 +94,7 @@
         
     </nav>
 
-    <div class="theme-and-search">
-
+    <div class="search">
         
 <form class="siteSearch" id="searchSite">
     <input type="text" placeholder="Search Site" id="searchSiteInput" name="searchSite" required autocomplete="off" />
@@ -135,9 +131,6 @@
                                 a.innerHTML = data[key]["Frontmatter"]["Title"];
                                 a.href = `/${data[key]["CompleteURL"]}`;
                                 resultDiv.appendChild(a);
-                                resultDiv.appendChild(
-                                    document.createElement("br"),
-                                );
                             }
                         }
                     } else {
@@ -154,11 +147,6 @@
         });
 </script>
 
-
-        
-        <div class="theme-toggle-div">
-            <img id="theme-toggle" src="/static/icons/theme-toggle-purple.svg" alt="Theme Toggle Button" />
-        </div>
     </div>
 
 </header>
@@ -253,6 +241,10 @@ These JPEGs are stored in an 'images' directory created by the application withi
 
 
     </div>
+    <script>
+        hljs.highlightAll();
+        hljs.addPlugin(new CopyButtonPlugin());
+    </script>
 </body>
 
 </html>

@@ -5,11 +5,10 @@ navbar:
   - tags
   - projects
 
-baseURL: https://sudhir.live/
+baseURL: https://sudhir.live
 
 siteTitle: "Anirudh Sudhir"
 
 siteScripts:
-  - theme.js
 
 author: Anirudh Sudhir

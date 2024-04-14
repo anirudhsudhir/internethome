@@ -13,12 +13,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{$PageData.Frontmatter.Title}}</title>
 
-    <link rel="stylesheet" href="/static/water.css">
+    <!-- <link rel="stylesheet" href="/static/water.css"> -->
     <link rel="stylesheet" href="/static/style.css">
 
     <!-- External Stylesheets and Plugins -->
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
-    <script defer src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/tokyo-night-dark.min.css">
+
+    <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css" />
     <link rel="alternate" type="application/atom+xml" title="feed" href="/feed.xml" />
 
@@ -49,9 +52,5 @@
 
     <meta name="description" content="{{ $PageData.Frontmatter.Description }}">
 
-    <script defer>
-        hljs.highlightAll();
-        hljs.addPlugin(new CopyButtonPlugin());
-    </script>
 </head>
 {{end}}

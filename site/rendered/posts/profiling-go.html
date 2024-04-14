@@ -13,12 +13,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profiling with Go</title>
 
-    <link rel="stylesheet" href="/static/water.css">
+    
     <link rel="stylesheet" href="/static/style.css">
 
     
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
-    <script defer src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/tokyo-night-dark.min.css">
+
+    <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css" />
     <link rel="alternate" type="application/atom+xml" title="feed" href="/feed.xml" />
 
@@ -37,8 +40,6 @@
 
     
     
-    <script src="/static/scripts/theme.js" defer></script>
-    
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="Profiling with Go">
@@ -47,10 +48,6 @@
 
     <meta name="description" content="A webpage part of sudhir.live, the personal site of Anirudh Sudhir, an undergraduate computer science student at PES University, Bangalore. This page contains a post about profiling with Go. These notes are from a talk during a Go meetup.">
 
-    <script defer>
-        hljs.highlightAll();
-        hljs.addPlugin(new CopyButtonPlugin());
-    </script>
 </head>
 
 
@@ -95,8 +92,7 @@
         
     </nav>
 
-    <div class="theme-and-search">
-
+    <div class="search">
         
 <form class="siteSearch" id="searchSite">
     <input type="text" placeholder="Search Site" id="searchSiteInput" name="searchSite" required autocomplete="off" />
@@ -133,9 +129,6 @@
                                 a.innerHTML = data[key]["Frontmatter"]["Title"];
                                 a.href = `/${data[key]["CompleteURL"]}`;
                                 resultDiv.appendChild(a);
-                                resultDiv.appendChild(
-                                    document.createElement("br"),
-                                );
                             }
                         }
                     } else {
@@ -152,11 +145,6 @@
         });
 </script>
 
-
-        
-        <div class="theme-toggle-div">
-            <img id="theme-toggle" src="/static/icons/theme-toggle-purple.svg" alt="Theme Toggle Button" />
-        </div>
     </div>
 
 </header>
@@ -246,6 +234,10 @@ These objects can be reused later, leading to fewer allocations. The pros of usi
 
 
     </div>
+    <script>
+        hljs.highlightAll();
+        hljs.addPlugin(new CopyButtonPlugin());
+    </script>
 </body>
 
 </html>
