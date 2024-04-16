@@ -5,6 +5,7 @@ description: >
     The homepage of sudhir.live, the personal site of Anirudh Sudhir, 
     an undergraduate computer science student at PES University, Bangalore.
     This is the index page of the internethome.
+type: page
 ---
 
 ## Hello! I'm Anirudh
