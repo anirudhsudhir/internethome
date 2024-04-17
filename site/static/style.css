@@ -1,8 +1,9 @@
 :root {
-    --background: #FFFFFF;
-    --primary-colour: #701adb;
+    --background: #F8F0E5;
+    /* --primary-colour: #701adb; */
+    --primary-colour: #102C57;
     --font-colour: #000000;
-    --tag-background: #f1f1f1;
+    --tag-background: #D8C4B6;
 
     /* Graph variables */
     --color-text: var(--font-colour);
@@ -11,7 +12,17 @@
 
 @font-face {
     font-family: Inter;
-    src: url(/static/fonts/Inter-Regular.ttf);
+    src: url(/static/fonts/inter-regular.ttf);
+}
+
+@font-face {
+    font-family: Merriweather;
+    src: url(/static/fonts/merriweather.ttf);
+}
+
+@font-face {
+    font-family: Metropolis;
+    src: url(/static/fonts/metropolis.otf);
 }
 
 * {
@@ -23,7 +34,8 @@ body {
     height: 100vh;
 
     font-size: 1.1rem;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', 'Times New Roman', Times, serif;
+    font-weight: 100;
 
     color: var(--font-colour);
     background-color: var(--background);
@@ -81,6 +93,7 @@ nav {
     border: 3px var(--primary-colour) solid;
     border-radius: 5px;
     color: var(--font-colour);
+    background-color: var(--background);
 }
 
 #searchSiteInput:focus-visible {
@@ -190,6 +203,7 @@ h3,
 h4,
 h5,
 h6 {
+    font-family: 'Metropolis', 'Times New Roman', Times, serif;
     color: var(--primary-colour);
 }
 
