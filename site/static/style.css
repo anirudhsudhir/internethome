@@ -1,13 +1,15 @@
 :root {
     --background: #F8F0E5;
-    /* --primary-colour: #701adb; */
     --primary-colour: #102C57;
     --font-colour: #000000;
     --tag-background: #D8C4B6;
 
     /* Graph variables */
     --color-text: var(--font-colour);
-    --color-text-dim: var(--font-colour)
+    --color-text-dim: var(--font-colour);
+
+    --body-font-size: 1.1rem;
+    --post-link-font-size: 1.5rem;
 }
 
 @font-face {
@@ -33,7 +35,7 @@ body {
     margin: 0;
     height: 100vh;
 
-    font-size: 1.1rem;
+    font-size: var(--body-font-size);
     font-family: 'Inter', 'Times New Roman', Times, serif;
     font-weight: 100;
 
@@ -115,26 +117,13 @@ nav {
     gap: 5px;
 }
 
-.tags-placeholder {
-    display: flex;
-    align-content: center;
-    flex-wrap: wrap;
-    gap: 0.5em;
-}
-
-.tags-placeholder a {
-    font-weight: 600;
-    border-radius: 5px;
-
-    padding: 0.2em;
-
-    background-color: var(--tag-background);
-    color: var(--primary-colour);
-    border: 0.1em solid var(--tag-background);
-}
-
 .post-card {
-    padding: 0.5em 0;
+    padding: 3px;
+    margin: 20px 0;
+}
+
+.post-card-date {
+    font-size: calc(var(--body-font-size) - 0.2rem);
 }
 
 .post-card a {
@@ -143,6 +132,31 @@ nav {
 
 .post-card a:hover {
     text-decoration: underline;
+}
+
+
+.post-card-link {
+    font-size: var(--post-link-font-size);
+}
+
+.tags-placeholder,
+.post-tags-placeholder {
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    gap: 0.5em;
+}
+
+.tags-placeholder a,
+.post-tags-placeholder a {
+    font-weight: 600;
+    border-radius: 5px;
+
+    padding: 1px;
+
+    background-color: var(--tag-background);
+    color: var(--primary-colour);
+    border: 0.1em solid var(--tag-background);
 }
 
 #chart {
@@ -215,8 +229,9 @@ blockquote {
 }
 
 @media (max-width: 650px) {
-    body {
-        font-size: 1rem;
+    :root {
+        --body-font-size: 1rem;
+        --post-link-font-size: 1.3rem;
     }
 
     .body-container {
@@ -227,5 +242,10 @@ blockquote {
     nav {
         gap: 0.5em;
         font-size: 1.1rem;
+    }
+
+    svg {
+        width: auto;
+        height: auto;
     }
 }

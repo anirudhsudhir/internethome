@@ -14,9 +14,18 @@
 
           {{range $PostDate, $Post := .DeepDataMerge.Posts}}
           <div class="post-card">
-            <a id="post-link" href="{{$Post.CompleteURL}}">
+            <div class="post-card-date">{{$Post.Frontmatter.Date}}</div>
+            <a class="post-card-link" href="{{$Post.CompleteURL}}">
               {{$Post.Frontmatter.Title}}
             </a>
+            <div class="post-card-description">{{$Post.Frontmatter.Description}}</div>
+            <div class="post-tags-placeholder">
+              {{range $Post.Frontmatter.Tags}}
+              <a href="/tags/{{.}}.html">
+                {{.}}
+              </a>
+              {{end}}
+            </div>
           </div>
           {{end}}
 

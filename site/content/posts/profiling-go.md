@@ -4,10 +4,7 @@ date: 2024-04-13
 type: post
 draft: false
 description:
-    A webpage part of sudhir.live, the personal site of Anirudh Sudhir, 
-    an undergraduate computer science student at PES University, Bangalore.
-    This page contains a post about profiling with Go.
-    These notes are from a talk during a Go meetup.
+    Notes from the Go meetup
 tags:
   - go
   - tech
@@ -55,7 +52,12 @@ go tool pprof app.test pprof.cpu
 The demo used for the talk was a simple application that returned the user agent and latency of the endpoint.
 During the load test of the initial version using wrk, it handled an average of 33,000 requests per second. While impressive, this number could be improved.
 
-The speaker first performed a benchmark using `net/http/pprof` to identify possible bottlenecks. Using `go tool pprof -seconds <duration> -http <profiling_url> <debug/pprof/profile_url_endpoint>`, the profile of the application can be generated.
+The speaker first performed a benchmark using `net/http/pprof` to identify possible bottlenecks.
+```
+go tool pprof -seconds <duration> -http <profiling_url> <debug/pprof/profile_url_endpoint>
+```
+The profile of the application can be generated using the above command.
+
 The data can be visualised in different forms, such as a graph or a flame graph.
 
 During the session, the regular graph was used.
@@ -70,7 +72,10 @@ The next step was to use the profiling flags present in the go test command to u
 ![Image of the generation of the cpuprofile file](/static/images/posts/profiling-go/go_test_flags.jpeg)
 
 As seen above, the memory allocation for the benchmark is printed to stdout. Here, the application performed 12 allocations for a total of 447 bytes per operation.
-The `go tool pprof <binary_name> <profile_file>` command starts an interactive application. Commands such as `web` and `disasm` can be used to understand different parts of the profile.
+```
+go tool pprof <binary_name> <profile_file>
+``` 
+This command starts an interactive application. Commands such as `web` and `disasm` can be used to understand different parts of the profile.
 
 The `list <function_name>` command displays the time time taken by certain operations of the particular function.
 

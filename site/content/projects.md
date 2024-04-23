@@ -2,9 +2,7 @@
 title: Projects
 date: 2024-02-24
 description: >
-    A webpage part of sudhir.live, the personal site of Anirudh Sudhir, 
-    an undergraduate computer science student at PES University, Bangalore.
-    This page contains the projects built by Anirudh.
+    This page lists all the projects built by Anirudh.
 type: page
 ---
 

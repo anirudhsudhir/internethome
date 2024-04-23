@@ -1,12 +1,9 @@
 ---
-title: Qapture - Recover deleted JPEGs from a forensic image
+title: Qapture
 date: 2024-03-09
 type: post
 description: >
-    A webpage part of sudhir.live, the personal site of Anirudh Sudhir, 
-    an undergraduate computer science student at PES University, Bangalore.
-    This page contains a post about qapture, a CLI tool to recover deleted JPEGs
-    from a forensic image, written in C.
+    A CLI tool to recover deleted JPEGs from a forensic image
 tags:
     - c
     - hsp
