@@ -1,9 +1,9 @@
 navbar:
   - index
   - posts
-  - timeline
+  - pow
   - tags
-  - projects
+  - resume
 
 baseURL: https://sudhir.live
 

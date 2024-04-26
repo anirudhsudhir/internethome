@@ -1,0 +1,185 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+
+    
+    <link rel="stylesheet" href="/static/style.css">
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/tokyo-night-dark.min.css">
+
+    <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css" />
+    <link rel="alternate" type="application/atom+xml" title="feed" href="/feed.xml" />
+
+    <script data-goatcounter="https://overuse2015.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+    
+    
+
+
+    
+    
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+
+    <meta name="description" content="">
+
+</head>
+
+
+<body>
+  <div class="body-container">
+
+    
+
+ 
+
+<header>
+    <nav>
+        
+        
+        
+        <a href="/">home</a>
+         
+        
+         
+        
+        <a href="/posts.html">posts</a>
+          
+        
+         
+        
+        <a href="/pow.html">pow</a>
+          
+        
+         
+        
+        <a href="/tags.html">tags</a>
+          
+        
+         
+        <a href="/resume.pdf">resume</a>
+          
+    </nav>
+
+    <div class="search">
+<form class="siteSearch" id="searchSite">
+    <input type="text" placeholder="Search Site" id="searchSiteInput" name="searchSite" required autocomplete="off" />
+</form>
+<div id="site_search_result"></div>
+<script>
+    var resultDiv = document.getElementById("site_search_result");
+    document
+        .getElementById("searchSite")
+        .addEventListener("keyup", function (e) {
+            e.preventDefault();
+            const searchValue =
+                document.getElementById("searchSiteInput").value;
+
+            const url = "/static/index.json";
+
+            fetch(url)
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error("Network response was not ok");
+                    }
+                    return response.json();
+                })
+                .then((data) => {
+                    resultDiv.innerHTML = "";
+                    found = 0;
+                    if (searchValue != "") {
+                        for (key in data) {
+                            found += 1;
+                            title =
+                                data[key]["Frontmatter"]["Title"].toLowerCase();
+                            if (title.includes(searchValue.toLowerCase())) {
+                                var a = document.createElement("a");
+                                a.innerHTML = data[key]["Frontmatter"]["Title"];
+                                a.href = `/${data[key]["CompleteURL"]}`;
+                                resultDiv.appendChild(a);
+                            }
+                        }
+                    } else {
+                        document.getElementById("site_search_result").innerHTML = "";
+                    }
+                })
+                .catch((error) => {
+                    
+                    console.error(
+                        "There was a problem with the fetch operation:",
+                        error,
+                    );
+                });
+        });
+</script>
+</div>
+</header>
+
+
+    <div class="body">
+      <article>
+        <div class="all-tags">
+          <h2>Tags</h2>
+          <div class="tags-placeholder">
+
+            
+            <a href="tags/acm.html">acm</a>
+            
+            <a href="tags/aiep.html">aiep</a>
+            
+            <a href="tags/c.html">c</a>
+            
+            <a href="tags/go.html">go</a>
+            
+            <a href="tags/hsp.html">hsp</a>
+            
+            <a href="tags/meetup.html">meetup</a>
+            
+            <a href="tags/perf.html">perf</a>
+            
+            <a href="tags/talks.html">talks</a>
+            
+            <a href="tags/tech.html">tech</a>
+            
+            <a href="tags/thoughts.html">thoughts</a>
+            
+
+          </div>
+        </div>
+
+        <div id="chart"></div>
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <script src="/static/scripts/graph.js"></script>
+
+      </article>
+    </div>
+
+    
+<footer>
+  Powered by <a href="https://github.com/acmpesuecc/anna">Anna</a> :)
+</footer>
+
+
+  </div>
+</body>
+
+</html>
+

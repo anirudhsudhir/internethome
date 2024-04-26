@@ -2,9 +2,9 @@
 title: Home
 date: 2024-02-24
 description: >
-    The homepage of sudhir.live, the personal site of Anirudh Sudhir, 
-    an undergraduate computer science student at PES University, Bangalore.
-    This is the index page of the internethome.
+  The homepage of sudhir.live, the personal site of Anirudh Sudhir,
+  an undergraduate computer science student at PES University, Bangalore.
+  This is the index page of my internethome.
 type: page
 ---
 
@@ -15,9 +15,9 @@ A computer science student and tech enthusiast. Welcome to my home on the intern
 ### About Me
 
 I'm a freshman at PES University, Bangalore.
-I love exploring and building projects. Take a look at what I've [built](projects.html) (or my [Github](https://github.com/anirudhsudhir)).
+I love exploring and building projects.
 
 ### What I'm working on right now
 
-- Building a [static site generator](https://github.com/acmpesuecc/anna) written in Go.
+- Building [anna](https://github.com/acmpesuecc/anna), a static site generator written in Go.
 - Learning the Rust programming language.

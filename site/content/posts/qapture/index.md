@@ -3,12 +3,12 @@ title: Qapture
 date: 2024-03-09
 type: post
 description: >
-    A CLI tool to recover deleted JPEGs from a forensic image
+  A CLI tool to recover deleted JPEGs from a forensic image
 tags:
-    - c
-    - hsp
-    - talks
-    - tech
+  - c
+  - hsp
+  - talks
+  - tech
 ---
 
 This post is part of a talk I gave at the Mentor Expo conducted by [HSP](https://homebrew.hsp-ec.xyz), the developer community at my college. I delivered the talk on 23rd November, 2023.
@@ -31,7 +31,7 @@ Forensic images are exact copies or replicas of digital storage media, typically
 
 qapture uses the RAW image format since it contains a bit-by-bit copy of the entire storage medium. The metadata associated with the disk or the files are stored separately, simplifying recovery.
 
-![Schematic of a forensic image](/static/images/posts/qapture/qapture_ForensicImage.png)
+![Schematic of a forensic image](images/qapture_ForensicImage.png)
 
 ### How JPEGs are stored in memory
 
@@ -45,7 +45,7 @@ These markers are represented by various hexadecimal codes:
 - APPn - 0xFF(255), 0xEn(224 to 239) (where n represents any hexadecimal digit)
 - EOI - 0xFF(255), 0xD9(217)
 
-![Segmented view of various markers in a JPEG file](/static/images/posts/qapture/qapture_SegmentedMarkers.png)
+![Segmented view of various markers in a JPEG file](images/qapture_SegmentedMarkers.png)
 
 ### Block Size
 
@@ -53,7 +53,7 @@ Block size refers to the minimum amount of data that can be stored or retrieved 
 
 Blocks are highly important as they drastically increase the speed of any file IO operation.
 
-![Files stored as Blocks](/static/images/posts/qapture/qapture_BlocksFS.png)
+![Files stored as Blocks](images/qapture_BlocksFS.png)
 
 ### How qapture works
 
@@ -76,13 +76,13 @@ If these conditions are satisfied, it writes the array to a new JPEG file in the
 While writing the array to the file, qapture checks if the current and the following byte is 255(0xFF) and 217(0xD9) respectively (indicating EOI).
 
 - If an EOI is encountered, the EOI marker is written and file is closed.
-qapture then reads the following block from the RAW image.
+  qapture then reads the following block from the RAW image.
 
 - If no EOI is encountered, qapture writes the entire array to the JPEG and reads the following block.
 
 This process continues until all of the RAW image is read.
 
-![Schematic depicting how qapture functions](/static/images/posts/qapture/qapture_Working.png)
+![Schematic depicting how qapture functions](images/qapture_Working.png)
 
 Once the entire image is read, qapture prints the number of JPEGs which have been successfully recovered.
 These JPEGs are stored in an 'images' directory created by the application within the project directory.

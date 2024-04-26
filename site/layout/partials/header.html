@@ -1,9 +1,7 @@
 {{define "header"}}
 <!-- If the template for a particular url does not exist(posts.html), setting it to the specific page template data -->
-{{ $PageData := index .DeepDataMerge.Templates .PageURL }}
-{{if eq $PageData nil }}
-{{ $PageData = .TemplateData }}
-{{end}}
+{{ $PageData := index .DeepDataMerge.Templates .PageURL }} {{if eq $PageData nil
+}} {{ $PageData = .TemplateData }} {{end}}
 
 <header>
     <nav>
@@ -11,16 +9,14 @@
         <!-- Replacing with author name for index page -->
         {{ if eq . "index" }}
         <a href="/">home</a>
+        {{else}} {{if eq . "resume" }}
+        <a href="/resume.pdf">resume</a>
         {{else}}
         <!-- Other layout fields are filled here -->
         <a href="/{{.}}.html">{{.}}</a>
-        {{end}}
-        {{end}}
+        {{end}} {{end}} {{end}}
     </nav>
 
-    <div class="search">
-        {{template "search" .}}
-    </div>
-
+    <div class="search">{{template "search" .}}</div>
 </header>
 {{end}}
