@@ -1,6 +1,13 @@
 {{define "search"}}
 <form class="siteSearch" id="searchSite">
-    <input type="text" placeholder="Search Site" id="searchSiteInput" name="searchSite" required autocomplete="off" />
+    <input
+        type="text"
+        placeholder="Search"
+        id="searchSiteInput"
+        name="searchSite"
+        required
+        autocomplete="off"
+    />
 </form>
 <div id="site_search_result"></div>
 <script>
@@ -37,7 +44,9 @@
                             }
                         }
                     } else {
-                        document.getElementById("site_search_result").innerHTML = "";
+                        document.getElementById(
+                            "site_search_result",
+                        ).innerHTML = "";
                     }
                 })
                 .catch((error) => {

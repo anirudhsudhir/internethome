@@ -8,16 +8,16 @@ description: >
 type: page
 ---
 
-## Hello! I'm Anirudh
+> Hello! I'm Anirudh
 
 A computer science student and tech enthusiast. Welcome to my home on the internet.
 
-### About Me
+About Me
 
 I'm a freshman at PES University, Bangalore.
 I love exploring and building projects.
 
-### What I'm working on right now
+What I'm working on right now
 
 - Building [anna](https://github.com/acmpesuecc/anna), a static site generator written in Go.
 - Learning the Rust programming language.

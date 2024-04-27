@@ -3,7 +3,8 @@ title: Profiling with Go
 date: 2024-04-13
 type: post
 draft: false
-description: Notes from the Go meetup
+description: >
+  Using various tools and libraries to improve the performance of a Go application
 tags:
   - go
   - tech
@@ -22,7 +23,7 @@ The Go standard library has several built-in mechanisms for profiling:
 2. Using various profiling flags present in the go test command
 3. Utilising the [runtime/pprof](https://pkg.go.dev/runtime/pprof) library to profile a certain block of code
 
-### Using net/http/pprof as a blank import
+### Using the net/http/pprof package as a blank import
 
 On performing a blank import of net/http/pprof, Go automatically attaches a debug/pprof endpoint to the application.
 This endpoint contains an interactive web console which can be used to analyse the live profile data.

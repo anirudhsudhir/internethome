@@ -11,7 +11,7 @@
       <article>
         <div class="all-tags">
           <h2>Tags</h2>
-          <div class="tags-placeholder">
+          <div class="post-tags-placeholder">
 
             {{range .TagNames}}
             <a href="tags/{{.}}.html">{{.}}</a>
@@ -19,12 +19,8 @@
 
           </div>
         </div>
-
-        <div id="chart"></div>
-        <script src="https://d3js.org/d3.v7.min.js"></script>
-        <script src="/static/scripts/graph.js"></script>
-
       </article>
+
     </div>
 
     {{template "footer" .}}

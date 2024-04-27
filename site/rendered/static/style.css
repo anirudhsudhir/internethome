@@ -1,30 +1,26 @@
 :root {
-    --background: #f8f0e5;
-    --primary-colour: #102c57;
-    --font-colour: #000000;
-    --tag-background: #d8c4b6;
+    --background: #131313;
+    --primary-colour-yellow: #f3d875;
+    --primary-colour-green: #748d43;
+    --primary-colour-blue: #739af0;
+    --font-colour: #ffffff;
 
     /* Graph variables */
     --color-text: var(--font-colour);
     --color-text-dim: var(--font-colour);
 
-    --body-font-size: 1.1rem;
+    --heading-font-size: 2.5rem;
+    --navbar-font-size: 1.4rem;
+    --body-font-size: 1.3rem;
     --post-link-font-size: 1.5rem;
+
+    --search-width: 70px;
+    --search-width-focus: 300px;
 }
 
 @font-face {
     font-family: Inter;
     src: url(/static/fonts/inter-regular.ttf);
-}
-
-@font-face {
-    font-family: Merriweather;
-    src: url(/static/fonts/merriweather.ttf);
-}
-
-@font-face {
-    font-family: Metropolis;
-    src: url(/static/fonts/metropolis.otf);
 }
 
 * {
@@ -36,8 +32,11 @@ body {
     height: 100vh;
 
     font-size: var(--body-font-size);
-    font-family: "Inter", "Times New Roman", Times, serif;
-    font-weight: 100;
+    font-family: "Yantramanav", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    line-height: calc(var(--body-font-size) + 0.5rem);
 
     color: var(--font-colour);
     background-color: var(--background);
@@ -46,7 +45,7 @@ body {
 .body-container {
     margin: auto;
     padding: 30px;
-    width: 650px;
+    width: 750px;
     height: 100%;
 
     display: flex;
@@ -66,13 +65,16 @@ footer {
     text-align: center;
 }
 
+footer a {
+    color: var(--primary-colour-yellow);
+}
+
 .body {
     flex: 1 0 auto;
-    line-height: 1.7em;
 }
 
 a {
-    color: var(--primary-colour);
+    color: var(--primary-colour-blue);
     text-decoration: underline;
 }
 
@@ -83,6 +85,11 @@ nav {
     text-align: center;
 }
 
+nav a {
+    font-size: var(--navbar-font-size);
+    color: var(--primary-colour-yellow);
+}
+
 .search {
     margin-top: 10px;
     display: flex;
@@ -90,23 +97,30 @@ nav {
 }
 
 #searchSiteInput {
+    width: var(--search-width);
     padding: 5px;
 
-    border: 3px var(--primary-colour) solid;
-    border-radius: 5px;
+    outline: none;
+    border: none;
+    border-bottom: 2px var(--primary-colour-yellow) solid;
     color: var(--font-colour);
     background-color: var(--background);
 }
 
 #searchSiteInput:focus-visible {
-    border: 4px var(--primary-colour) solid;
-    border-radius: 5px;
+    -webkit-transition: width 300ms ease-in-out;
+    -moz-transition: width 300ms ease-in-out;
+    -o-transition: width 300ms ease-in-out;
+    transition: width 300ms ease-in-out;
+
+    width: var(--search-width-focus);
     color: var(--font-colour);
     padding: 5px;
 }
 
 #searchSiteInput::placeholder {
-    color: var(--font-colour);
+    color: var(--primary-colour-yellow);
+    font-size: calc(var(--navbar-font-size) - 0.3rem);
 }
 
 #site_search_result {
@@ -120,22 +134,26 @@ nav {
 .post-card {
     padding: 3px;
     margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
 }
 
 .post-card-date {
     font-size: calc(var(--body-font-size) - 0.2rem);
-}
-
-.post-card a {
-    text-decoration: none;
-}
-
-.post-card a:hover {
-    text-decoration: underline;
+    font-weight: 300;
 }
 
 .post-card-link {
     font-size: var(--post-link-font-size);
+}
+
+.post-card a {
+    text-decoration: none;
+    color: var(--primary-colour-green);
+}
+.post-card a:hover {
+    text-decoration: underline;
 }
 
 .tags-placeholder,
@@ -144,18 +162,17 @@ nav {
     align-content: center;
     flex-wrap: wrap;
     gap: 0.5em;
+    font-weight: 300;
 }
 
 .tags-placeholder a,
 .post-tags-placeholder a {
-    font-weight: 600;
-    border-radius: 5px;
+    color: var(--primary-colour-green);
+    font-style: italic;
+}
 
-    padding: 1px 3px 1px;
-
-    background-color: var(--tag-background);
-    color: var(--primary-colour);
-    border: 0.1em solid var(--tag-background);
+.tags-placeholder {
+    font-style: italic;
 }
 
 #chart {
@@ -219,8 +236,16 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Metropolis", "Times New Roman", Times, serif;
-    color: var(--primary-colour);
+    margin: 1rem 0;
+
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    letter-spacing: 1px;
+    line-height: calc(var(--heading-font-size) + 0.2rem);
+    font-size: var(--heading-font-size);
+    color: var(--font-colour);
     &:hover {
         .anchor {
             opacity: 1;
@@ -229,16 +254,21 @@ h6 {
 }
 
 blockquote {
-    border-left: 5px var(--primary-colour) solid;
+    border-left: 5px var(--primary-colour-blue) solid;
     margin-left: 0;
     padding: 10px;
     padding-left: 20px;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 750px) {
     :root {
+        --heading-font-size: 1.5rem;
+        --navbar-font-size: 1.2rem;
         --body-font-size: 1rem;
         --post-link-font-size: 1.3rem;
+
+        --search-width: 60px;
+        --search-width-focus: 200px;
     }
 
     .body-container {

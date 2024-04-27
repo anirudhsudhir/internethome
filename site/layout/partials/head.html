@@ -1,56 +1,78 @@
 {{define "head"}}
 <!-- If the template for a particular url does not exist(posts.html), setting it to the specific page template data -->
-{{ $PageData := index .DeepDataMerge.Templates .PageURL }}
-{{if eq $PageData nil }}
-{{ $PageData = .TemplateData }}
-{{end}}
+{{ $PageData := index .DeepDataMerge.Templates .PageURL }} {{if eq $PageData nil
+}} {{ $PageData = .TemplateData }} {{end}}
 
 <!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{{$PageData.Frontmatter.Title}}</title>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{$PageData.Frontmatter.Title}}</title>
+        <link rel="stylesheet" href="/static/style.css" />
 
-    <!-- <link rel="stylesheet" href="/static/water.css"> -->
-    <link rel="stylesheet" href="/static/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Yantramanav:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
 
-    <!-- External Stylesheets and Plugins -->
-    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/tokyo-night-dark.min.css">
+        <!-- External Stylesheets and Plugins -->
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/tokyo-night-dark.min.css"
+        />
 
-    <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css" />
-    <link rel="alternate" type="application/atom+xml" title="feed" href="/feed.xml" />
+        <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css"
+        />
+        <link
+            rel="alternate"
+            type="application/atom+xml"
+            title="feed"
+            href="/feed.xml"
+        />
 
-    <script data-goatcounter="https://overuse2015.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+        <script
+            data-goatcounter="https://overuse2015.goatcounter.com/count"
+            async
+            src="//gc.zgo.at/count.js"
+        ></script>
 
-    <!-- Scripts filled in from plugins -->
-    {{ if $PageData.LiveReload }}
-    <script>
-        const eventSource = new EventSource('http://localhost:8000/events');
-        eventSource.onmessage = function (event) {
-            location.reload()
-        };
-    </script>
-    {{ end }}
+        <!-- Scripts filled in from plugins -->
+        {{ if $PageData.LiveReload }}
+        <script>
+            const eventSource = new EventSource("http://localhost:8000/events");
+            eventSource.onmessage = function (event) {
+                location.reload();
+            };
+        </script>
+        {{ end }} {{range $PageData.Frontmatter.JSFiles}}
+        <script src="/static/scripts/{{.}}" defer></script>
+        {{end}} {{range .DeepDataMerge.LayoutConfig.SiteScripts}}
+        <script src="/static/scripts/{{.}}" defer></script>
+        {{end}}
 
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="{{ $PageData.Frontmatter.Title }}" />
+        <meta
+            property="og:description"
+            content="{{ $PageData.Frontmatter.Description }}"
+        />
+        <meta
+            property="og:image"
+            content="{{ $PageData.Frontmatter.PreviewImage }}"
+        />
 
-    {{range $PageData.Frontmatter.JSFiles}}
-    <script src="/static/scripts/{{.}}" defer></script>
+        <meta
+            name="description"
+            content="{{ $PageData.Frontmatter.Description }}"
+        />
+    </head>
     {{end}}
-    {{range .DeepDataMerge.LayoutConfig.SiteScripts}}
-    <script src="/static/scripts/{{.}}" defer></script>
-    {{end}}
-
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="{{ $PageData.Frontmatter.Title }}">
-    <meta property="og:description" content="{{ $PageData.Frontmatter.Description }}">
-    <meta property="og:image" content="{{ $PageData.Frontmatter.PreviewImage }}">
-
-    <meta name="description" content="{{ $PageData.Frontmatter.Description }}">
-
-</head>
-{{end}}
+</html>

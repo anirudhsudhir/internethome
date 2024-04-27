@@ -2,47 +2,69 @@
 
 
 
-
-
+ 
 
 <!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title></title>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
+        <link rel="stylesheet" href="/static/style.css" />
 
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Yantramanav:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/tokyo-night-dark.min.css"
+        />
+
+        <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css"
+        />
+        <link
+            rel="alternate"
+            type="application/atom+xml"
+            title="feed"
+            href="/feed.xml"
+        />
+
+        <script
+            data-goatcounter="https://overuse2015.goatcounter.com/count"
+            async
+            src="//gc.zgo.at/count.js"
+        ></script>
+
+        
+          
+
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="" />
+        <meta
+            property="og:description"
+            content=""
+        />
+        <meta
+            property="og:image"
+            content=""
+        />
+
+        <meta
+            name="description"
+            content=""
+        />
+    </head>
     
-    <link rel="stylesheet" href="/static/style.css">
-
-    
-    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/tokyo-night-dark.min.css">
-
-    <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css" />
-    <link rel="alternate" type="application/atom+xml" title="feed" href="/feed.xml" />
-
-    <script data-goatcounter="https://overuse2015.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-
-    
-    
-
-
-    
-    
-
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="">
-    <meta property="og:description" content="">
-    <meta property="og:image" content="">
-
-    <meta name="description" content="">
-
-</head>
-
 
 <body>
   <div class="body-container">
@@ -81,7 +103,14 @@
 
     <div class="search">
 <form class="siteSearch" id="searchSite">
-    <input type="text" placeholder="Search Site" id="searchSiteInput" name="searchSite" required autocomplete="off" />
+    <input
+        type="text"
+        placeholder="Search"
+        id="searchSiteInput"
+        name="searchSite"
+        required
+        autocomplete="off"
+    />
 </form>
 <div id="site_search_result"></div>
 <script>
@@ -118,7 +147,9 @@
                             }
                         }
                     } else {
-                        document.getElementById("site_search_result").innerHTML = "";
+                        document.getElementById(
+                            "site_search_result",
+                        ).innerHTML = "";
                     }
                 })
                 .catch((error) => {
@@ -138,7 +169,7 @@
       <article>
         <div class="tagged-posts">
           <h2>Posts tagged "go"</h2>
-          <div class="tags-placeholder">
+          <div class="post-tags-placeholder">
 
             
             

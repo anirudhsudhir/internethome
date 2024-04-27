@@ -13,6 +13,7 @@
                 {{end}}
 
                 <div class="tags-placeholder">
+                    {{if ne (len $PageData.Frontmatter.Tags) 0}} Tags: {{end}}
                     {{range $PageData.Frontmatter.Tags}}
                     <a href="/tags/{{.}}.html">
                         {{.}}

@@ -11,7 +11,7 @@
       <article>
         <div class="tagged-posts">
           <h2>Posts tagged "{{$PageData.Frontmatter.Title}}"</h2>
-          <div class="tags-placeholder">
+          <div class="post-tags-placeholder">
 
             {{$TagSet := index .DeepDataMerge.TagsMap .PageURL}}
             {{range $TagSet }}
