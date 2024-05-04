@@ -1,34 +1,14 @@
 ---
-title: pow
-date: 2024-04-26
+title: Projects
+date: 2024-05-04
 description: >
-  This page contains my proof of work section
+  This page contains a description of the projects I've built
 type: page
-toc: true
 ---
 
-This section contains a summary of my proof of work.
-Take a look at what I've built in the projects section (or my [Github](https://github.com/anirudhsudhir)).
+All of my projects are hosted on Github at [anirudhsudhir](https://github.com/anirudhsudhir)
 
-## Timeline
-
-### 2024
-
-- March
-
-  - [Contributed](https://github.com/argoproj/argo-cd/pull/17459) to the Argo CD project.
-
-### 2023
-
-- November
-
-  - Gave a [talk](/posts/qapture.html) on one of my projects during the HSP Mentor Expo.
-
-- October
-
-  - Made my first open source [contribution](https://github.com/ghostfolio/ghostfolio/pull/2414) as part of Hacktoberfest 2023.
-
-## Projects
+# Projects
 
 [Anna](https://github.com/acmpesuecc/Anna) (In Progress)
 

@@ -3,19 +3,21 @@
     --primary-colour-yellow: #f3d875;
     --primary-colour-green: #748d43;
     --primary-colour-blue: #739af0;
-    --font-colour: #ffffff;
+    --font-colour: #ffffffba;
+    --font-colour-opaque: #ffffff;
+    --heading-font-colour: #ffffff;
 
     /* Graph variables */
     --color-text: var(--font-colour);
     --color-text-dim: var(--font-colour);
 
-    --heading-font-size: 2.5rem;
+    --h1-heading-font-size: 2.3rem;
     --navbar-font-size: 1.4rem;
     --body-font-size: 1.3rem;
     --post-link-font-size: 1.5rem;
 
-    --search-width: 70px;
-    --search-width-focus: 300px;
+    --search-width: 140px;
+    --search-width-focus: 350px;
 }
 
 @font-face {
@@ -52,6 +54,10 @@ body {
     flex-direction: column;
 
     background-color: var(--background);
+}
+
+p {
+    opacity: 0.9;
 }
 
 header,
@@ -162,7 +168,7 @@ nav a {
     align-content: center;
     flex-wrap: wrap;
     gap: 0.5em;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .tags-placeholder a,
@@ -172,7 +178,19 @@ nav a {
 }
 
 .tags-placeholder {
-    font-style: italic;
+    margin-top: 10px;
+}
+
+.tagpage-tags-placeholder {
+    margin-top: 20px;
+}
+.tagpage-tags-placeholder a {
+    font-style: normal;
+    color: var(--primary-colour-blue);
+}
+
+.tag-subpage-keyword {
+    color: var(--primary-colour-blue);
 }
 
 #chart {
@@ -229,6 +247,9 @@ svg {
     opacity: 0;
     transition: opacity 150ms ease-in-out;
 }
+hr {
+    border: 1px solid var(--font-colour);
+}
 
 h1,
 h2,
@@ -236,16 +257,16 @@ h3,
 h4,
 h5,
 h6 {
-    margin: 1rem 0;
+    /* font-family: "Bebas Neue", sans-serif;
+    font-weight: 400; */
+    font-family: "Yantramanav", sans-serif;
+    font-weight: 500;
+    /* text-decoration: underline; */
 
-    font-family: "Bebas Neue", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-
-    letter-spacing: 1px;
-    line-height: calc(var(--heading-font-size) + 0.2rem);
-    font-size: var(--heading-font-size);
-    color: var(--font-colour);
+    margin: 0;
+    /* letter-spacing: 0.5px; */
+    /* line-height: calc(var(--h1-heading-font-size) + 0.2rem); */
+    color: var(--heading-font-colour);
     &:hover {
         .anchor {
             opacity: 1;
@@ -253,22 +274,50 @@ h6 {
     }
 }
 
+h1 {
+    font-size: var(--h1-heading-font-size);
+    margin-top: calc(var(--h1-heading-font-size) - 0.1rem);
+}
+h2 {
+    font-size: calc(var(--h1-heading-font-size) - 0.2rem);
+    margin-top: calc(var(--h1-heading-font-size) - 0.3rem);
+}
+
+h3 {
+    font-size: calc(var(--h1-heading-font-size) - 0.4rem);
+    margin-top: calc(var(--h1-heading-font-size) - 0.5rem);
+}
+h4 {
+    font-size: calc(var(--h1-heading-font-size) - 0.6rem);
+    margin-top: calc(var(--h1-heading-font-size) - 0.6rem);
+}
+h5 {
+    font-size: calc(var(--h1-heading-font-size) - 0.7rem);
+    margin-top: calc(var(--h1-heading-font-size) - 0.7rem);
+}
+h6 {
+    font-size: calc(var(--h1-heading-font-size) - 0.8rem);
+    margin-top: calc(var(--h1-heading-font-size) - 0.8rem);
+}
+
 blockquote {
     border-left: 5px var(--primary-colour-blue) solid;
     margin-left: 0;
     padding: 10px;
     padding-left: 20px;
+
+    color: var(--font-colour-opaque);
 }
 
 @media (max-width: 750px) {
     :root {
-        --heading-font-size: 1.5rem;
+        --h1-heading-font-size: 1.5rem;
         --navbar-font-size: 1.2rem;
         --body-font-size: 1rem;
         --post-link-font-size: 1.3rem;
 
-        --search-width: 60px;
-        --search-width-focus: 200px;
+        --search-width: 120px;
+        --search-width-focus: 250px;
     }
 
     .body-container {

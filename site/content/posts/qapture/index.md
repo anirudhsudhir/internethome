@@ -11,6 +11,8 @@ tags:
   - tech
 ---
 
+---
+
 This post is part of a talk I gave at the Mentor Expo conducted by [HSP](https://homebrew.hsp-ec.xyz), the developer community at my college. I delivered the talk on 23rd November, 2023.
 
 ### About
@@ -19,11 +21,15 @@ qapture is a CLI tool to recover deleted JPEGs from a forensic image.
 
 [Link to the repo](https://github.com/anirudhsudhir/qapture)
 
+---
+
 ### Background
 
 When a file is deleted, it is removed from the file tree structure. However, the individual bytes remain in memory until they are overwritten by the OS.
 
 This implies that if all of the individual bytes are read from memory and pieced together in the right order and format, the file could be recovered in certain cases.
+
+---
 
 ### What’s a forensic image?
 
@@ -32,6 +38,8 @@ Forensic images are exact copies or replicas of digital storage media, typically
 qapture uses the RAW image format since it contains a bit-by-bit copy of the entire storage medium. The metadata associated with the disk or the files are stored separately, simplifying recovery.
 
 ![Schematic of a forensic image](images/qapture_ForensicImage.png)
+
+---
 
 ### How JPEGs are stored in memory
 
@@ -47,6 +55,8 @@ These markers are represented by various hexadecimal codes:
 
 ![Segmented view of various markers in a JPEG file](images/qapture_SegmentedMarkers.png)
 
+---
+
 ### Block Size
 
 Block size refers to the minimum amount of data that can be stored or retrieved at a time. When a file is created, the file system allocates space for it in terms of blocks. The file's data is then divided into chunks accordingly. Even if a particular block is not completely used, the next file is stored in the following one, with the remaining free space in the current block called slack space. Block sizes vary depending upon the filesystem. For example, the FAT filesystem usually utilizes 512 bytes per block.
@@ -54,6 +64,8 @@ Block size refers to the minimum amount of data that can be stored or retrieved 
 Blocks are highly important as they drastically increase the speed of any file IO operation.
 
 ![Files stored as Blocks](images/qapture_BlocksFS.png)
+
+---
 
 ### How qapture works
 

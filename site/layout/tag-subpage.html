@@ -10,8 +10,9 @@
     <div class="body">
       <article>
         <div class="tagged-posts">
-          <h2>Posts tagged "{{$PageData.Frontmatter.Title}}"</h2>
-          <div class="post-tags-placeholder">
+          <h2>Posts tagged
+              <span class="tag-subpage-keyword">{{$PageData.Frontmatter.Title}}</span></h2>
+          <div class="post-tags-placeholder tagpage-tags-placeholder">
 
             {{$TagSet := index .DeepDataMerge.TagsMap .PageURL}}
             {{range $TagSet }}

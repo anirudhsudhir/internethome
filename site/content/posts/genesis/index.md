@@ -3,9 +3,11 @@ title: Genesis
 date: 2024-03-08
 type: post
 description: >
-    The first post
+  The first post
 tags:
-    - thoughts
+  - thoughts
+---
+
 ---
 
 Hello!
@@ -20,6 +22,8 @@ I already had a website running before, written in markdown and rendered using [
 As part of [AIEP](https://acmpesuecc.github.io/aiep), our team, consisting of Adhesh, Aditya, Nathan and me, began working on a custom [static site generator](https://github.com/acmpesuecc/anna) in Go.
 
 > Fast forward a few weeks, and I've got my site up and running. Staying up late has been worth it.
+
+---
 
 ### Why I made a personal site
 

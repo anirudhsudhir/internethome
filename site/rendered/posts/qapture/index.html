@@ -16,7 +16,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Yantramanav:wght@100;300;400;500;700;900&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Yantramanav:wght@100;300;400;500;700;900&display=swap"
             rel="stylesheet"
         />
 
@@ -89,7 +89,12 @@
         
          
         
-        <a href="/pow.html">pow</a>
+        <a href="/projects.html">projects</a>
+          
+        
+         
+        
+        <a href="/timeline.html">timeline</a>
           
         
          
@@ -98,7 +103,8 @@
           
         
          
-        <a href="/resume.pdf">resume</a>
+        
+        <a href="/contact.html">contact</a>
           
     </nav>
 
@@ -106,7 +112,7 @@
 <form class="siteSearch" id="searchSite">
     <input
         type="text"
-        placeholder="Search"
+        placeholder="Search this site"
         id="searchSiteInput"
         name="searchSite"
         required
@@ -173,7 +179,6 @@
                 
 
                 <div class="tags-placeholder">
-                     Tags: 
                     
                     <a href="/tags/c.html">
                         c
@@ -208,19 +213,23 @@
 <li>
 <a href="#how-qapture-works">How qapture works</a></li>
 </ul>
+<hr>
 <p>This post is part of a talk I gave at the Mentor Expo conducted by <a href="https://homebrew.hsp-ec.xyz">HSP</a>, the developer community at my college. I delivered the talk on 23rd November, 2023.</p>
 <h3 id="about">About <a class="anchor" href="#about">#</a></h3>
 <p>qapture is a CLI tool to recover deleted JPEGs from a forensic image.</p>
 <p><a href="https://github.com/anirudhsudhir/qapture">Link to the repo</a></p>
+<hr>
 <h3 id="background">Background <a class="anchor" href="#background">#</a></h3>
 <p>When a file is deleted, it is removed from the file tree structure. However, the individual bytes remain in memory until they are overwritten by the OS.</p>
 <p>This implies that if all of the individual bytes are read from memory and pieced together in the right order and format, the file could be recovered in certain cases.</p>
+<hr>
 <h3 id="whats-a-forensic-image">What’s a forensic image? <a class="anchor" href="#whats-a-forensic-image">#</a></h3>
 <p>Forensic images are exact copies or replicas of digital storage media, typically created for the purpose of preserving and analyzing digital evidence. There are several types of forensic images such as RAW images, dd (Disk Dump) images and EO1(Encase) images.</p>
 <p>qapture uses the RAW image format since it contains a bit-by-bit copy of the entire storage medium. The metadata associated with the disk or the files are stored separately, simplifying recovery.</p>
 <figure>
 <img src="images/qapture_ForensicImage.png" alt="Schematic of a forensic image">
 </figure>
+<hr>
 <h3 id="how-jpegs-are-stored-in-memory">How JPEGs are stored in memory <a class="anchor" href="#how-jpegs-are-stored-in-memory">#</a></h3>
 <p>A JPEG file is divided into segments, each starting with a marker. Markers are two bytes long and start with 0xFF. Some markers define segments that contain specific information about the image, such as the image dimensions, color space information, and more.</p>
 <p>Of these, the SOI(Start of image) along with the APPn(Application specific codes) and EOI(End of image) markers are the ones that denote the beginning and end of the JPEG file.</p>
@@ -233,12 +242,14 @@
 <figure>
 <img src="images/qapture_SegmentedMarkers.png" alt="Segmented view of various markers in a JPEG file">
 </figure>
+<hr>
 <h3 id="block-size">Block Size <a class="anchor" href="#block-size">#</a></h3>
 <p>Block size refers to the minimum amount of data that can be stored or retrieved at a time. When a file is created, the file system allocates space for it in terms of blocks. The file's data is then divided into chunks accordingly. Even if a particular block is not completely used, the next file is stored in the following one, with the remaining free space in the current block called slack space. Block sizes vary depending upon the filesystem. For example, the FAT filesystem usually utilizes 512 bytes per block.</p>
 <p>Blocks are highly important as they drastically increase the speed of any file IO operation.</p>
 <figure>
 <img src="images/qapture_BlocksFS.png" alt="Files stored as Blocks">
 </figure>
+<hr>
 <h3 id="how-qapture-works">How qapture works <a class="anchor" href="#how-qapture-works">#</a></h3>
 <p>qapture is a CLI tool.
 The user runs it by passing the path to the RAW image as an argument.</p>
@@ -274,7 +285,8 @@ These JPEGs are stored in an 'images' directory created by the application withi
 
         
 <footer>
-  Powered by <a href="https://github.com/acmpesuecc/anna">Anna</a> :)
+    Powered by <a href="/posts/building-anna/">Anna</a>, a custom static site
+    generator
 </footer>
 
 

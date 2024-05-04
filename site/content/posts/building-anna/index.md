@@ -13,7 +13,11 @@ tags:
   - aiep
 ---
 
-This post is currently WIP and has been co-authored by [Adhesh](https://github.com/DedLad), [Aditya](https://github.com/bwaklog) and [Nathan](https://github.com/polarhive).
+---
+
+This post is currently work in progress and has been co-authored by [Adhesh](https://github.com/DedLad), [Aditya](https://github.com/bwaklog) and [Nathan](https://github.com/polarhive).
+
+---
 
 There are several amazing SSGs out there, like [Hugo](https://gohugo.io/) and
 [11ty](https://www.11ty.dev/). Building your own SSG is an amazing learning

@@ -9,14 +9,14 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>pow</title>
+        <title>Timeline</title>
 
         <link rel="stylesheet" href="/static/style.css" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Yantramanav:wght@100;300;400;500;700;900&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Yantramanav:wght@100;300;400;500;700;900&display=swap"
             rel="stylesheet"
         />
 
@@ -49,10 +49,10 @@
           
 
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="pow" />
+        <meta property="og:title" content="Timeline" />
         <meta
             property="og:description"
-            content="This page contains my proof of work section
+            content="This page contains a timeline of my achievements
 "
         />
         <meta
@@ -62,7 +62,7 @@
 
         <meta
             name="description"
-            content="This page contains my proof of work section
+            content="This page contains a timeline of my achievements
 "
         />
     </head>
@@ -89,7 +89,12 @@
         
          
         
-        <a href="/pow.html">pow</a>
+        <a href="/projects.html">projects</a>
+          
+        
+         
+        
+        <a href="/timeline.html">timeline</a>
           
         
          
@@ -98,7 +103,8 @@
           
         
          
-        <a href="/resume.pdf">resume</a>
+        
+        <a href="/contact.html">contact</a>
           
     </nav>
 
@@ -106,7 +112,7 @@
 <form class="siteSearch" id="searchSite">
     <input
         type="text"
-        placeholder="Search"
+        placeholder="Search this site"
         id="searchSiteInput"
         name="searchSite"
         required
@@ -172,7 +178,6 @@
 
                 <div class="tags-placeholder">
                     
-                    
                 </div>
 
                 <h1 id="table-of-contents">Table of Contents <a class="anchor" href="#table-of-contents">#</a></h1>
@@ -180,57 +185,37 @@
 <li>
 <a href="#timeline">Timeline</a><ul>
 <li>
-<a href="#2024">2024</a></li>
+<a href="#2024">2024</a><ul>
 <li>
-<a href="#2023">2023</a></li>
+<a href="#march">March</a></li>
 </ul>
 </li>
 <li>
-<a href="#projects">Projects</a></li>
+<a href="#2023">2023</a><ul>
+<li>
+<a href="#november">November</a></li>
+<li>
+<a href="#october">October</a></li>
 </ul>
-<p>This section contains a summary of my proof of work.
-Take a look at what I've built in the projects section (or my <a href="https://github.com/anirudhsudhir">Github</a>).</p>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="timeline">Timeline <a class="anchor" href="#timeline">#</a></h2>
 <h3 id="2024">2024 <a class="anchor" href="#2024">#</a></h3>
-<ul>
-<li>
-<p>March</p>
+<h4 id="march">March <a class="anchor" href="#march">#</a></h4>
 <ul>
 <li><a href="https://github.com/argoproj/argo-cd/pull/17459">Contributed</a> to the Argo CD project.</li>
 </ul>
-</li>
-</ul>
 <h3 id="2023">2023 <a class="anchor" href="#2023">#</a></h3>
+<h4 id="november">November <a class="anchor" href="#november">#</a></h4>
 <ul>
-<li>
-<p>November</p>
-<ul>
-<li>Gave a <a href="/posts/qapture.html">talk</a> on one of my projects during the HSP Mentor Expo.</li>
+<li>Gave a <a href="/posts/qapture/">talk</a> on one of my projects during the HSP Mentor Expo.</li>
 </ul>
-</li>
-<li>
-<p>October</p>
+<h4 id="october">October <a class="anchor" href="#october">#</a></h4>
 <ul>
 <li>Made my first open source <a href="https://github.com/ghostfolio/ghostfolio/pull/2414">contribution</a> as part of Hacktoberfest 2023.</li>
 </ul>
-</li>
-</ul>
-<h2 id="projects">Projects <a class="anchor" href="#projects">#</a></h2>
-<p><a href="https://github.com/acmpesuecc/Anna">Anna</a> (In Progress)</p>
-<p>A static site generator written in Go. This is a team project.
-Link to the blog: <a href="/posts/building-anna.html">anna</a></p>
-<p><a href="https://github.com/anirudhsudhir/Bingo">Bingo</a></p>
-<p>A server-side rendered pastebin written in Go with data persistence, middleware and sessions.</p>
-<p><a href="https://github.com/anirudhsudhir/Spidey-v2">Spidey-v2</a></p>
-<p>A multi-threaded web crawler written in Go, capable of extremely fast crawl rates.
-It has a consistent crawl rate of over 10k links per minute.
-On one test, Spidey discovered 16,000 links in a minute.</p>
-<p>This project is a rewrite of <a href="https://github.com/anirudhsudhir/Spidey">Spidey</a>.</p>
-<p><a href="https://github.com/anirudhsudhir/Qapture">Qapture</a></p>
-<p>A command-line tool written in C to recover deleted JPEGs from a forensic RAW image.
-Link to the blog: <a href="/posts/qapture.html">qapture</a></p>
-<p><a href="https://github.com/anirudhsudhir/Librarian">Librarian</a></p>
-<p>A command-line library management system written in Java with data persistence.</p>
 
 
             </article>
@@ -238,7 +223,8 @@ Link to the blog: <a href="/posts/qapture.html">qapture</a></p>
 
         
 <footer>
-  Powered by <a href="https://github.com/acmpesuecc/anna">Anna</a> :)
+    Powered by <a href="/posts/building-anna/">Anna</a>, a custom static site
+    generator
 </footer>
 
 
