@@ -11,14 +11,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Contact</title>
 
-        <link rel="stylesheet" href="/static/style.css" />
+        <link rel="stylesheet" href="/static/styles/style.css" />
 
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Yantramanav:wght@100;300;400;500;700;900&display=swap"
-            rel="stylesheet"
-        />
+        
 
         
         <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
@@ -48,8 +43,23 @@
         
           
 
+        
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "name": "Anirudh Sudhir",
+                
+                "url": "https://sudhir.live/"
+            }
+        </script>
+
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Contact" />
+        <meta
+            property="og:site_name"
+            content="Anirudh Sudhir"
+        />
         <meta
             property="og:description"
             content="This page contains my contact information
@@ -76,43 +86,29 @@
 
 <header>
     <nav>
-        
-        
-        
-        <a href="/">home</a>
          
-        
-         
-        
-        <a href="/posts.html">posts</a>
+        <a class="navitem" href="/index.html">Home</a>
           
-        
-         
-        
-        <a href="/projects.html">projects</a>
+        <a class="navitem" href="/posts.html">Posts</a>
           
-        
-         
-        
-        <a href="/timeline.html">timeline</a>
+        <a class="navitem" href="/projects.html">Projects</a>
           
-        
-         
-        
-        <a href="/tags.html">tags</a>
+        <a class="navitem" href="/timeline.html">Timeline</a>
           
-        
-         
-        
-        <a href="/contact.html">contact</a>
+        <a class="navitem" href="/tags.html">Tags</a>
           
+        <a class="navitem" href="/contact.html">Contact</a>
+         
+
+        
+        
     </nav>
 
     <div class="search">
 <form class="siteSearch" id="searchSite">
     <input
         type="text"
-        placeholder="Search this site"
+        placeholder="Search"
         id="searchSiteInput"
         name="searchSite"
         required

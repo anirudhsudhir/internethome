@@ -5,16 +5,13 @@
 
 <header>
     <nav>
-        {{range .DeepDataMerge.LayoutConfig.Navbar}}
-        <!-- Replacing with author name for index page -->
-        {{ if eq . "index" }}
-        <a href="/">home</a>
-        {{else}} {{if eq . "resume" }}
-        <a href="/resume.pdf">resume</a>
-        {{else}}
-        <!-- Other layout fields are filled here -->
-        <a href="/{{.}}.html">{{.}}</a>
-        {{end}} {{end}} {{end}}
+        {{range $index_no, $map := .DeepDataMerge.LayoutConfig.Navbar}} {{range
+        $key, $value := $map }}
+        <a class="navitem" href="/{{ $value }}">{{ $key }}</a>
+        {{ end }} {{end}}
+
+        <!--  Theme Toggle-->
+        <!-- <button id="theme-toggle">Toggle theme</button> -->
     </nav>
 
     <div class="search">{{template "search" .}}</div>

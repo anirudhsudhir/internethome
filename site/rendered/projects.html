@@ -11,14 +11,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Projects</title>
 
-        <link rel="stylesheet" href="/static/style.css" />
+        <link rel="stylesheet" href="/static/styles/style.css" />
 
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Yantramanav:wght@100;300;400;500;700;900&display=swap"
-            rel="stylesheet"
-        />
+        
 
         
         <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
@@ -48,8 +43,23 @@
         
           
 
+        
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "name": "Anirudh Sudhir",
+                
+                "url": "https://sudhir.live/"
+            }
+        </script>
+
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Projects" />
+        <meta
+            property="og:site_name"
+            content="Anirudh Sudhir"
+        />
         <meta
             property="og:description"
             content="This page contains a description of the projects I&#39;ve built
@@ -76,43 +86,29 @@
 
 <header>
     <nav>
-        
-        
-        
-        <a href="/">home</a>
          
-        
-         
-        
-        <a href="/posts.html">posts</a>
+        <a class="navitem" href="/index.html">Home</a>
           
-        
-         
-        
-        <a href="/projects.html">projects</a>
+        <a class="navitem" href="/posts.html">Posts</a>
           
-        
-         
-        
-        <a href="/timeline.html">timeline</a>
+        <a class="navitem" href="/projects.html">Projects</a>
           
-        
-         
-        
-        <a href="/tags.html">tags</a>
+        <a class="navitem" href="/timeline.html">Timeline</a>
           
-        
-         
-        
-        <a href="/contact.html">contact</a>
+        <a class="navitem" href="/tags.html">Tags</a>
           
+        <a class="navitem" href="/contact.html">Contact</a>
+         
+
+        
+        
     </nav>
 
     <div class="search">
 <form class="siteSearch" id="searchSite">
     <input
         type="text"
-        placeholder="Search this site"
+        placeholder="Search"
         id="searchSiteInput"
         name="searchSite"
         required
@@ -185,16 +181,20 @@
 <p><a href="https://github.com/acmpesuecc/Anna">Anna</a> (In Progress)</p>
 <p>A static site generator written in Go. This is a team project.
 Link to the blog: <a href="/posts/building-anna.html">anna</a></p>
+<hr>
 <p><a href="https://github.com/anirudhsudhir/Bingo">Bingo</a></p>
 <p>A server-side rendered pastebin written in Go with data persistence, middleware and sessions.</p>
+<hr>
 <p><a href="https://github.com/anirudhsudhir/Spidey-v2">Spidey-v2</a></p>
 <p>A multi-threaded web crawler written in Go, capable of extremely fast crawl rates.
 It has a consistent crawl rate of over 10k links per minute.
 On one test, Spidey discovered 16,000 links in a minute.</p>
 <p>This project is a rewrite of <a href="https://github.com/anirudhsudhir/Spidey">Spidey</a>.</p>
+<hr>
 <p><a href="https://github.com/anirudhsudhir/Qapture">Qapture</a></p>
 <p>A command-line tool written in C to recover deleted JPEGs from a forensic RAW image.
 Link to the blog: <a href="/posts/qapture.html">qapture</a></p>
+<hr>
 <p><a href="https://github.com/anirudhsudhir/Librarian">Librarian</a></p>
 <p>A command-line library management system written in Java with data persistence.</p>
 

@@ -1,28 +1,32 @@
 :root {
-    --background: #131313;
-    --primary-colour-yellow: #f3d875;
-    --primary-colour-green: #748d43;
-    --primary-colour-blue: #739af0;
+    /* Dark mode variables */
+    --background: #000000;
+    --primary-colour: #ffffe6;
     --font-colour: #ffffffba;
-    --font-colour-opaque: #ffffff;
-    --heading-font-colour: #ffffff;
+    --heading-font-colour: #ffffe6;
+    --navbar-link-colour: #ffffe6;
 
-    /* Graph variables */
-    --color-text: var(--font-colour);
-    --color-text-dim: var(--font-colour);
+    /* Light mode variables */
+    /* --background: #D2E0FB; */
+    /* --primary-colour: #000000; */
+    /* --font-colour: #000000; */
+    /* --heading-font-colour: #000000; */
+    /* --navbar-link-colour: #; */
 
-    --h1-heading-font-size: 2.3rem;
-    --navbar-font-size: 1.4rem;
-    --body-font-size: 1.3rem;
-    --post-link-font-size: 1.5rem;
-
-    --search-width: 140px;
-    --search-width-focus: 350px;
+    --h1-heading-font-size: 2.1rem;
+    --navbar-font-size: 1.3rem;
+    --body-font-size: 1.2rem;
+    --post-link-font-size: 1.3rem;
 }
 
 @font-face {
-    font-family: Inter;
-    src: url(/static/fonts/inter-regular.ttf);
+    font-family: Quicksand;
+    src: url(/static/fonts/Quicksand-Medium.otf);
+}
+
+@font-face {
+    font-family: Britney;
+    src: url(/static/fonts/Britney-Regular.otf);
 }
 
 * {
@@ -34,11 +38,11 @@ body {
     height: 100vh;
 
     font-size: var(--body-font-size);
-    font-family: "Yantramanav", sans-serif;
-    font-weight: 400;
+    font-family: "Quicksand", sans-serif;
+    font-weight: medium;
     font-style: normal;
 
-    line-height: calc(var(--body-font-size) + 0.5rem);
+    line-height: calc(var(--body-font-size) + 0.3rem);
 
     color: var(--font-colour);
     background-color: var(--background);
@@ -65,14 +69,20 @@ footer {
     flex: 0;
 }
 
+header {
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary-colour);
+}
+
 footer {
     padding: 10px 0 10px;
+    border-top: 2px solid var(--primary-colour);
     color: var(--font-colour);
     text-align: center;
 }
 
 footer a {
-    color: var(--primary-colour-yellow);
+    color: var(--primary-colour);
 }
 
 .body {
@@ -80,20 +90,21 @@ footer a {
 }
 
 a {
-    color: var(--primary-colour-blue);
     text-decoration: underline;
+    color: var(--primary-colour);
 }
 
 nav {
     display: flex;
-    gap: 1em;
+    gap: 0.5em;
     flex-wrap: wrap;
     text-align: center;
 }
 
 nav a {
+    text-decoration: none;
     font-size: var(--navbar-font-size);
-    color: var(--primary-colour-yellow);
+    color: var(--navbar-link-colour);
 }
 
 .search {
@@ -103,30 +114,20 @@ nav a {
 }
 
 #searchSiteInput {
-    width: var(--search-width);
-    padding: 5px;
+    width: auto;
 
     outline: none;
-    border: none;
-    border-bottom: 2px var(--primary-colour-yellow) solid;
+    border: 2px var(--primary-colour) solid;
+    border-radius: 5px;
+    padding: 8px;
+
     color: var(--font-colour);
     background-color: var(--background);
 }
 
-#searchSiteInput:focus-visible {
-    -webkit-transition: width 300ms ease-in-out;
-    -moz-transition: width 300ms ease-in-out;
-    -o-transition: width 300ms ease-in-out;
-    transition: width 300ms ease-in-out;
-
-    width: var(--search-width-focus);
-    color: var(--font-colour);
-    padding: 5px;
-}
-
 #searchSiteInput::placeholder {
-    color: var(--primary-colour-yellow);
-    font-size: calc(var(--navbar-font-size) - 0.3rem);
+    color: var(--font-colour);
+    font-size: (var(--body-font-size) - 0.1rem);
 }
 
 #site_search_result {
@@ -150,14 +151,21 @@ nav a {
     font-weight: 300;
 }
 
+.post-card-link-and-description {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
 .post-card-link {
     font-size: var(--post-link-font-size);
 }
 
 .post-card a {
-    text-decoration: none;
-    color: var(--primary-colour-green);
+    text-decoration: underline;
+    color: var(--primary-colour);
 }
+
 .post-card a:hover {
     text-decoration: underline;
 }
@@ -173,7 +181,7 @@ nav a {
 
 .tags-placeholder a,
 .post-tags-placeholder a {
-    color: var(--primary-colour-green);
+    color: var(--primary-colour);
     font-style: italic;
 }
 
@@ -184,13 +192,14 @@ nav a {
 .tagpage-tags-placeholder {
     margin-top: 20px;
 }
+
 .tagpage-tags-placeholder a {
     font-style: normal;
-    color: var(--primary-colour-blue);
+    color: var(--primary-colour);
 }
 
 .tag-subpage-keyword {
-    color: var(--primary-colour-blue);
+    color: var(--primary-colour);
 }
 
 #chart {
@@ -243,10 +252,12 @@ svg {
     width: 100%;
     height: auto;
 }
+
 .anchor {
     opacity: 0;
     transition: opacity 150ms ease-in-out;
 }
+
 hr {
     border: 1px solid var(--font-colour);
 }
@@ -257,16 +268,12 @@ h3,
 h4,
 h5,
 h6 {
-    /* font-family: "Bebas Neue", sans-serif;
-    font-weight: 400; */
-    font-family: "Yantramanav", sans-serif;
-    font-weight: 500;
-    /* text-decoration: underline; */
+    font-family: "Britney", sans-serif;
+    font-weight: 600;
 
     margin: 0;
-    /* letter-spacing: 0.5px; */
-    /* line-height: calc(var(--h1-heading-font-size) + 0.2rem); */
     color: var(--heading-font-colour);
+
     &:hover {
         .anchor {
             opacity: 1;
@@ -278,6 +285,7 @@ h1 {
     font-size: var(--h1-heading-font-size);
     margin-top: calc(var(--h1-heading-font-size) - 0.1rem);
 }
+
 h2 {
     font-size: calc(var(--h1-heading-font-size) - 0.2rem);
     margin-top: calc(var(--h1-heading-font-size) - 0.3rem);
@@ -287,21 +295,24 @@ h3 {
     font-size: calc(var(--h1-heading-font-size) - 0.4rem);
     margin-top: calc(var(--h1-heading-font-size) - 0.5rem);
 }
+
 h4 {
     font-size: calc(var(--h1-heading-font-size) - 0.6rem);
     margin-top: calc(var(--h1-heading-font-size) - 0.6rem);
 }
+
 h5 {
     font-size: calc(var(--h1-heading-font-size) - 0.7rem);
     margin-top: calc(var(--h1-heading-font-size) - 0.7rem);
 }
+
 h6 {
     font-size: calc(var(--h1-heading-font-size) - 0.8rem);
     margin-top: calc(var(--h1-heading-font-size) - 0.8rem);
 }
 
 blockquote {
-    border-left: 5px var(--primary-colour-blue) solid;
+    border-left: 5px var(--primary-colour) solid;
     margin-left: 0;
     padding: 10px;
     padding-left: 20px;
@@ -309,29 +320,49 @@ blockquote {
     color: var(--font-colour-opaque);
 }
 
-@media (max-width: 750px) {
-    :root {
-        --h1-heading-font-size: 1.5rem;
-        --navbar-font-size: 1.2rem;
-        --body-font-size: 1rem;
-        --post-link-font-size: 1.3rem;
-
-        --search-width: 120px;
-        --search-width-focus: 250px;
-    }
-
+@media (max-width: 900px) {
     .body-container {
-        padding: 15px;
-        width: auto;
-    }
-
-    nav {
-        gap: 0.5em;
-        font-size: 1.1rem;
+        padding: 15px 45px;
     }
 
     svg {
         width: auto;
         height: auto;
+    }
+}
+
+@media (max-width: 750px) {
+    :root {
+        --h1-heading-font-size: 2rem;
+        --navbar-font-size: 1.1rem;
+        --body-font-size: 1rem;
+        --post-link-font-size: 1.1rem;
+    }
+
+    .body-container {
+        padding: 15px 20px;
+        width: auto;
+    }
+
+    svg {
+        width: auto;
+        height: auto;
+    }
+
+    .search {
+        padding: 0px 0.1em 0px;
+    }
+
+    #searchSiteInput {
+        width: 100%;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: 500;
     }
 }

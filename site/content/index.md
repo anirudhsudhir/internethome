@@ -1,16 +1,17 @@
 ---
-title: Home
+title: Anirudh Sudhir
 date: 2024-02-24
 description: >
-  The homepage of sudhir.live, the personal site of Anirudh Sudhir,
-  an undergraduate computer science student at PES University, Bangalore.
-  This is the index page of my internethome.
+  I'm Anirudh, a computer science student and tech enthusiast. Welcome to my home on the internet!
 type: page
 ---
 
 ## Hello! I'm Anirudh
 
 A computer science student and tech enthusiast. Welcome to my home on the internet!
+
+![Me as a kid](/static/images/me.jpg)
+Me as a kid
 
 ### About Me
 
@@ -19,15 +20,15 @@ I love exploring and building projects.
 
 My current interests include distributed systems and databases, systems programming and back-end development.
 
-> I'm currently on the lookout for internship opprtunities. If you're hiring, please [reach](/contact.html) out.
+> I'm currently on the lookout for internship opportunities. If you're hiring, please [reach](/contact.html) out.
 > Here's my [resume](/resume.pdf).
 
-### What I'm working on right now
+### What I'm hacking on right now
 
-- Exploring distributed systems and databases
+- [Working](https://github.com/anirudhsudhir/mit_dist_sys_labs) on the MIT 6.5840 labs on distributed systems
 - Learning the Rust programming language
 - Building [anna](https://github.com/acmpesuecc/anna), a static site generator written in Go
-- Working on this site
+- Improving this site
 
 ### Guide to this site
 

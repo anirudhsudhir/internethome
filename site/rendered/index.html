@@ -9,16 +9,11 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Home</title>
+        <title>Anirudh Sudhir</title>
 
-        <link rel="stylesheet" href="/static/style.css" />
+        <link rel="stylesheet" href="/static/styles/style.css" />
 
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Yantramanav:wght@100;300;400;500;700;900&display=swap"
-            rel="stylesheet"
-        />
+        
 
         
         <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
@@ -48,11 +43,26 @@
         
           
 
+        
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "name": "Anirudh Sudhir",
+                
+                "url": "https://sudhir.live/"
+            }
+        </script>
+
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Home" />
+        <meta property="og:title" content="Anirudh Sudhir" />
+        <meta
+            property="og:site_name"
+            content="Anirudh Sudhir"
+        />
         <meta
             property="og:description"
-            content="The homepage of sudhir.live, the personal site of Anirudh Sudhir, an undergraduate computer science student at PES University, Bangalore. This is the index page of my internethome.
+            content="I&#39;m Anirudh, a computer science student and tech enthusiast. Welcome to my home on the internet!
 "
         />
         <meta
@@ -62,7 +72,7 @@
 
         <meta
             name="description"
-            content="The homepage of sudhir.live, the personal site of Anirudh Sudhir, an undergraduate computer science student at PES University, Bangalore. This is the index page of my internethome.
+            content="I&#39;m Anirudh, a computer science student and tech enthusiast. Welcome to my home on the internet!
 "
         />
     </head>
@@ -76,43 +86,29 @@
 
 <header>
     <nav>
-        
-        
-        
-        <a href="/">home</a>
          
-        
-         
-        
-        <a href="/posts.html">posts</a>
+        <a class="navitem" href="/index.html">Home</a>
           
-        
-         
-        
-        <a href="/projects.html">projects</a>
+        <a class="navitem" href="/posts.html">Posts</a>
           
-        
-         
-        
-        <a href="/timeline.html">timeline</a>
+        <a class="navitem" href="/projects.html">Projects</a>
           
-        
-         
-        
-        <a href="/tags.html">tags</a>
+        <a class="navitem" href="/timeline.html">Timeline</a>
           
-        
-         
-        
-        <a href="/contact.html">contact</a>
+        <a class="navitem" href="/tags.html">Tags</a>
           
+        <a class="navitem" href="/contact.html">Contact</a>
+         
+
+        
+        
     </nav>
 
     <div class="search">
 <form class="siteSearch" id="searchSite">
     <input
         type="text"
-        placeholder="Search this site"
+        placeholder="Search"
         id="searchSiteInput"
         name="searchSite"
         required
@@ -182,20 +178,24 @@
 
                 <h2 id="hello-im-anirudh">Hello! I'm Anirudh</h2>
 <p>A computer science student and tech enthusiast. Welcome to my home on the internet!</p>
+<figure>
+<img src="/static/images/me.jpg" alt="Me as a kid">
+<figcaption><p>Me as a kid</p></figcaption>
+</figure>
 <h3 id="about-me">About Me</h3>
 <p>I'm a freshman at PES University, Bangalore.
 I love exploring and building projects.</p>
 <p>My current interests include distributed systems and databases, systems programming and back-end development.</p>
 <blockquote>
-<p>I'm currently on the lookout for internship opprtunities. If you're hiring, please <a href="/contact.html">reach</a> out.
+<p>I'm currently on the lookout for internship opportunities. If you're hiring, please <a href="/contact.html">reach</a> out.
 Here's my <a href="/resume.pdf">resume</a>.</p>
 </blockquote>
-<h3 id="what-im-working-on-right-now">What I'm working on right now</h3>
+<h3 id="what-im-hacking-on-right-now">What I'm hacking on right now</h3>
 <ul>
-<li>Exploring distributed systems and databases</li>
+<li><a href="https://github.com/anirudhsudhir/mit_dist_sys_labs">Working</a> on the MIT 6.5840 labs on distributed systems</li>
 <li>Learning the Rust programming language</li>
 <li>Building <a href="https://github.com/acmpesuecc/anna">anna</a>, a static site generator written in Go</li>
-<li>Working on this site</li>
+<li>Improving this site</li>
 </ul>
 <h3 id="guide-to-this-site">Guide to this site</h3>
 <ul>
