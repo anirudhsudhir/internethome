@@ -7,8 +7,7 @@
         {{template "header" .}}
         <div class="body">
 
-            <article>
-                {{if eq $PageData.Frontmatter.Type "post"}}
+                {{if strSliceContains $PageData.Frontmatter.Collections "posts"}}
                 <h2>{{$PageData.Frontmatter.Title}}</h2>
                 {{end}}
 
@@ -22,7 +21,6 @@
 
                 {{$PageData.Body}}
 
-            </article>
         </div>
 
         {{template "footer" .}}

@@ -3,17 +3,31 @@ title: Projects
 date: 2024-05-04
 description: >
   This page contains a description of the projects I've built
-type: page
 ---
 
 All of my projects are hosted on Github at [anirudhsudhir](https://github.com/anirudhsudhir)
 
 # Projects
 
-[Anna](https://github.com/acmpesuecc/Anna) (In Progress)
+[Anna](https://github.com/anna-ssg/Anna)
 
-A static site generator written in Go. This is a team project.
-Link to the blog: [anna](/posts/building-anna.html)
+A lightning-fast static site generator written in Go.
+
+This project is maintained by [Adhesh Athrey](https://github.com/DedLad), [Nathan Paul](https://github.com/polarhive), [Anirudh Sudhir](https://github.com/anirudhsudhir), and [Aditya Hegde](https://github.com/bwaklog)
+
+Link to the [blog](/posts/building-anna)
+
+---
+
+[MIT Distributed Systems Labs](https://github.com/anirudhsudhir/mit_dist_sys_labs)
+
+A series of labs accompanying the [coursework on distributed systems](https://pdos.csail.mit.edu/6.824/index.html), which includes building a custom Raft implementation in Go.
+
+---
+
+[Hermes](https://github.com/anirudhsudhir/hermes)
+
+A concurrent web server written in Rust, with a simple thread pool implementation and graceful shutdown.
 
 ---
 
@@ -36,10 +50,5 @@ This project is a rewrite of [Spidey](https://github.com/anirudhsudhir/Spidey).
 [Qapture](https://github.com/anirudhsudhir/Qapture)
 
 A command-line tool written in C to recover deleted JPEGs from a forensic RAW image.
-Link to the blog: [qapture](/posts/qapture.html)
 
----
-
-[Librarian](https://github.com/anirudhsudhir/Librarian)
-
-A command-line library management system written in Java with data persistence.
+Link to the [blog](/posts/qapture)

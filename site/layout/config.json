@@ -1,0 +1,14 @@
+{
+  "navbar": [
+    { "Home": "index.html" },
+    { "Posts": "collections/posts.html" },
+    { "Projects": "projects.html" },
+    { "Timeline": "timeline.html" },
+    { "Tags": "tags.html" },
+    { "Contact": "contact.html" }
+  ],
+  "baseURL": "https://sudhir.live",
+  "siteTitle": "Anirudh Sudhir",
+  "author": "Anirudh Sudhir",
+  "collectionLayouts": { "collections/posts.html": "all-posts" }
+}

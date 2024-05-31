@@ -1,21 +1,17 @@
 ---
 title: Profiling with Go
 date: 2024-04-13
-type: post
-draft: false
 description: >
   Using various tools and libraries to improve the performance of a Go application
-tags:
-  - go
-  - tech
-  - meetup
-  - perf
+tags: ["go", "tech", "meetup", "perf"]
+collections: ["posts"]
+toc: true
 ---
 
 ---
 
-This post is about the first talk of the Go meetup on 13th April, 2024 in Bangalore.
-This was a hand-on session, where the speaker used various profiling techniques to improve the performance of a sample application.
+This post contains notes from a hands-on talk during the Go Bangalore April meetup.
+Various profiling techniques were explored to improve the performance of a sample application.
 
 ## Introduction
 
@@ -57,7 +53,7 @@ go tool pprof app.test pprof.cpu
 
 ## Walkthrough
 
-The demo used for the talk was a simple application that returned the user agent and latency of the endpoint.
+The demo used for the talk was a simple web application that returned the user agent and latency of the endpoint.
 During the load test of the initial version using wrk, it handled an average of 33,000 requests per second. While impressive, this number could be improved.
 
 ### Initial investigation
