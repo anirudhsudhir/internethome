@@ -1,14 +1,11 @@
 ---
 title: Qapture
 date: 2024-03-09
-type: post
 description: >
   A CLI tool to recover deleted JPEGs from a forensic image
-tags:
-  - c
-  - hsp
-  - talks
-  - tech
+tags: ["c", "hsp", "tech", "talk"]
+collections: ["posts"]
+toc: true
 ---
 
 ---

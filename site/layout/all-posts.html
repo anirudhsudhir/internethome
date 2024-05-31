@@ -1,5 +1,5 @@
-{{ define "posts"}}
-{{$PageData := .TemplateData}}
+{{ define "all-posts"}}
+{{$PageData := index .DeepDataMerge.Collections .PageURL}}
 {{ template "head" .}}
 
 <body>
@@ -8,18 +8,17 @@
     {{template "header" .}}
 
     <div class="body">
-      <article>
         <div class="posts">
           <h2>Posts</h2>
 
-          {{range $PostDate, $Post := .DeepDataMerge.Posts}}
+          {{range $Post := index .DeepDataMerge.CollectionsMap .PageURL}}
           <div class="post-card">
             <div class="post-card-date">{{$Post.Frontmatter.Date}}</div>
             <div class="post-card-link-and-description">
-            <a class="post-card-link" href="{{$Post.CompleteURL}}">
-              {{$Post.Frontmatter.Title}}
-            </a>
-            <div class="post-card-description">{{$Post.Frontmatter.Description}}</div>
+              <a class="post-card-link" href="/{{$Post.CompleteURL}}">
+                {{$Post.Frontmatter.Title}}
+              </a>
+              <div class="post-card-description">{{$Post.Frontmatter.Description}}</div>
             </div>
             <div class="post-tags-placeholder">
               {{range $Post.Frontmatter.Tags}}
@@ -32,7 +31,6 @@
           {{end}}
 
         </div>
-      </article>
     </div>
 
     {{template "footer" .}}

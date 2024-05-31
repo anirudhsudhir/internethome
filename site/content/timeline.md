@@ -3,7 +3,6 @@ title: Timeline
 date: 2024-05-04
 description: >
   This page contains a timeline of my achievements
-type: page
 toc: true
 ---
 

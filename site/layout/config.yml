@@ -1,16 +1,14 @@
 navbar:
   - Home: index.html
-  - Posts: posts.html
+  - Posts: collections/posts.html
   - Projects: projects.html
   - Timeline: timeline.html
   - Tags: tags.html
   - Contact: contact.html
 
 baseURL: https://sudhir.live
-
 siteTitle: Anirudh Sudhir
-
 siteScripts:
-  # - light.js
-
 author: Anirudh Sudhir
+collectionLayouts:
+  - collections/posts.html: all-posts

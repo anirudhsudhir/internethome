@@ -1,0 +1,31 @@
+{{ define "all-collections"}}
+{{$PageData := .TemplateData}}
+{{ template "head" .}}
+
+<body>
+  <div class="body-container">
+
+    {{template "header" .}}
+
+    <div class="body">
+        <div class="all-tags">
+          <h2>Collections</h2>
+          <div class="post-tags-placeholder tagpage-tags-placeholder">
+
+            {{range .CollectionNames}}
+            <a href="/collections/{{.}}.html">{{.}}</a>
+            {{end}}
+
+          </div>
+        </div>
+
+    </div>
+
+    {{template "footer" .}}
+
+  </div>
+</body>
+
+</html>
+
+{{ end}}
