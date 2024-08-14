@@ -3,7 +3,7 @@
     { "Home": "index.html" },
     { "Posts": "collections/posts.html" },
     { "Projects": "projects.html" },
-    { "Timeline": "timeline.html" },
+    { "POW": "pow.html" },
     { "Tags": "tags.html" },
     { "Contact": "contact.html" }
   ],

@@ -2,7 +2,7 @@
 title: Projects
 date: 2024-05-04
 description: >
-  This page contains a description of the projects I've built
+  This page contains a description of the projects I've worked on
 ---
 
 All of my projects are hosted on Github at [anirudhsudhir](https://github.com/anirudhsudhir)
@@ -19,21 +19,9 @@ Link to the [blog](/posts/building-anna)
 
 ---
 
-[MIT Distributed Systems Labs](https://github.com/anirudhsudhir/mit_dist_sys_labs)
-
-A series of labs accompanying the [coursework on distributed systems](https://pdos.csail.mit.edu/6.824/index.html), which includes building a custom Raft implementation in Go.
-
----
-
 [Hermes](https://github.com/anirudhsudhir/hermes)
 
 A concurrent web server written in Rust, with a simple thread pool implementation and graceful shutdown.
-
----
-
-[Bingo](https://github.com/anirudhsudhir/Bingo)
-
-A server-side rendered pastebin written in Go with data persistence, middleware and sessions.
 
 ---
 
@@ -44,6 +32,12 @@ It has a consistent crawl rate of over 10k links per minute.
 On one test, Spidey discovered 16,000 links in a minute.
 
 This project is a rewrite of [Spidey](https://github.com/anirudhsudhir/Spidey).
+
+---
+
+[Bingo](https://github.com/anirudhsudhir/Bingo)
+
+A server-side rendered pastebin written in Go with data persistence, middleware and sessions.
 
 ---
 
