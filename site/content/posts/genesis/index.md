@@ -2,8 +2,8 @@
 title: Genesis
 date: 2024-03-08
 description: >
-  The first post
-tags: ["non-tech"]
+  My first post
+tags: ["thoughts"]
 collections: ["posts"]
 ---
 

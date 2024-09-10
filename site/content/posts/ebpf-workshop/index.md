@@ -2,14 +2,14 @@
 title: Buzzing with eBPF
 date: 2024-09-05
 description: A workshop on eBPF that I co-hosted at university
-tags: ["eBPF", "HSP", "tech"]
+tags: ["eBPF", "HSP", "tech", "workshop"]
 collections: ["posts"]
 toc: true
 ---
 
+This post is a republish of the following [blog](https://homebrew.hsp-ec.xyz/posts/buzzing-with-ebpf/) that was written as part of an eBPF workshop that my friend [Navneet Nayak](https://github.com/NavneetNayak) and I held on 5th September 2024 at our university.
+
 ---
- 
-This post is a republish of a blog written as part of an eBPF workshop that my friend [Navneet Nayak](https://github.com/NavneetNayak) and I conducted at our university. The original blog can be found [here](https://homebrew.hsp-ec.xyz/posts/buzzing-with-ebpf/).
 
 eBPF is a technology that’s being used for tracing, networking, security, and observability in innovative ways. Let’s learn about how you can give your kernel superpowers using eBPF!
 
@@ -58,7 +58,7 @@ BPF was the first to implement a register-based filter evaluator(VM) in the kern
 
 The BPF virtual machine has a 32-bit instruction set similar to assembly which allows for defining complex filters easily and with immense flexibility. For instance, these are the BPF instructions to filter out any packets not using the Internet Protocol(IP):
 
-```nasm
+```
 ldh     [12]
 jeq     #ETHERTYPE IP, L1, L2
 L1:     ret     #TRUE

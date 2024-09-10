@@ -2,8 +2,8 @@
 title: Profiling with Go
 date: 2024-04-13
 description: >
-  Using various tools and libraries to improve the performance of a Go application
-tags: ["go", "tech", "meetup", "perf"]
+  Profiling and improving the performance of a Go application
+tags: ["go", "meetup", "perf", "tech"]
 collections: ["posts"]
 toc: true
 ---

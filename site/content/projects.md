@@ -19,6 +19,12 @@ Link to the [blog](/posts/building-anna)
 
 ---
 
+[kvs](https://github.com/anirudhsudhir/kvs/)
+
+A Bitcask-like log-structured key-value store with an in-memory index, written in Rust.
+
+---
+
 [Hermes](https://github.com/anirudhsudhir/hermes)
 
 A concurrent web server written in Rust, with a simple thread pool implementation and graceful shutdown.

@@ -8,6 +8,11 @@ toc: true
 
 ## 2024
 
+#### September
+
+- Conducted a workshop on eBPF(extended Berkeley Packet Filter) at university with my friend Navneet Nayak
+  - Link to the [workshop blog](/posts/ebpf-workshop)
+
 #### July
 
 - Worked on a project, HyperDistillation, at the [PES Innovation Lab](https://www.theinnovationlab.in)

@@ -1,14 +1,15 @@
 ---
 title: Kvs Log
-date: 2024-09-10
+date: 2024-09-12
 description: A Bitcask-like log structured key-value store in Rust
-tags: ["databases", "rust", "tech"]
+tags: ["bitcask", "databases", "rust", "tech"]
 collections: ["posts"]
-draft: true
 toc: true
 ---
 
 ---
+
+> *This post is currently WIP*
 
 # Introduction
 
@@ -26,7 +27,7 @@ I have been following the [PingCAP Talent Plan](https://github.com/pingcap/talen
 
 ---
 
-### Log Compaction POC
+### Log Compaction POC (WIP!)
 
 The write-ahead log(WAL) appends new data to the log for every command. Older key-value pairs might be invalidated by newer entries or deletions. Log compaction is necessary to:
 

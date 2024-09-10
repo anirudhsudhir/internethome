@@ -21,8 +21,8 @@ My current interests include systems programming, distributed systems and databa
 
 ### What I'm working on right now
 
+- Building a Bitcask-like log-structured key-value store in Rust ([Link to repo](https://github.com/anirudhsudhir/kvs/))
 - Exploring eBPF programming and its applications
-- Building a Bitcask-like log-structured key-value store in Rust
 
 ### Guide to this site
 

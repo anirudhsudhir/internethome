@@ -5,54 +5,50 @@
 
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>{{$PageData.Frontmatter.Title}}</title>
 
-        <link rel="stylesheet" href="/static/styles/style.css" />
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{$PageData.Frontmatter.Title}}</title>
 
-        <!-- External Stylesheets and Plugins -->
-        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
-        <link
+    <link rel="stylesheet" href="/static/styles/style.css" />
+
+    <script src="/static/scripts/highlight.min.js"></script>
+    <link rel="stylesheet" href="/static/styles/highlight-gruvbox-dark-medium.min.css">
+
+    <script src="/static/scripts/highlight-copy.min.js"></script>
+    <link rel="stylesheet" href="/static/styles/highlight-copy.min.css">
+
+    <!-- External Stylesheets and Plugins -->
+    <!-- <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.10.0/build/highlight.min.js"></script> -->
+    <!-- <link
             rel="stylesheet"
-            href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/tokyo-night-dark.min.css"
-        />
+            href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.10.0/build/styles/base16/gruvbox-dark-medium.min.css"
+        /> -->
 
-        <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
-        <link
-            rel="stylesheet"
-            href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css"
-        />
-        <link
-            rel="alternate"
-            type="application/atom+xml"
-            title="feed"
-            href="/feed.xml"
-        />
+    <!-- <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css" /> -->
 
-        <script
-            data-goatcounter="https://overuse2015.goatcounter.com/count"
-            async
-            src="//gc.zgo.at/count.js"
-        ></script>
+    <link rel="alternate" type="application/atom+xml" title="feed" href="/feed.xml" />
 
-        <!-- Scripts filled in from plugins -->
-        {{ if $PageData.LiveReload }}
-        <script>
-            const eventSource = new EventSource("http://localhost:8000/events");
-            eventSource.onmessage = function (event) {
-                location.reload();
-            };
-        </script>
-        {{ end }} {{range $PageData.Frontmatter.JSFiles}}
-        <script src="/static/scripts/{{.}}" defer></script>
-        {{end}} {{range .DeepDataMerge.LayoutConfig.SiteScripts}}
-        <script src="/static/scripts/{{.}}" defer></script>
-        {{end}}
+    <script data-goatcounter="https://overuse2015.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
-        <!-- Indicating website name preferences -->
-        <script type="application/ld+json">
+    <!-- Scripts filled in from plugins -->
+    {{ if $PageData.LiveReload }}
+    <script>
+        const eventSource = new EventSource("http://localhost:8000/events");
+        eventSource.onmessage = function (event) {
+            location.reload();
+        };
+    </script>
+    {{ end }} {{range $PageData.Frontmatter.JSFiles}}
+    <script src="/static/scripts/{{.}}" defer></script>
+    {{end}} {{range .DeepDataMerge.LayoutConfig.SiteScripts}}
+    <script src="/static/scripts/{{.}}" defer></script>
+    {{end}}
+
+    <!-- Indicating website name preferences -->
+    <script type="application/ld+json">
             {
                 "@context": "https://schema.org",
                 "@type": "WebSite",
@@ -62,28 +58,17 @@
             }
         </script>
 
-        <!-- Disabling dark reader extension on site -->
-        <meta name="darkreader-lock">
+    <!-- Disabling dark reader extension on site -->
+    <meta name="darkreader-lock">
 
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="{{ $PageData.Frontmatter.Title }}" />
-        <meta
-            property="og:site_name"
-            content="{{.DeepDataMerge.LayoutConfig.SiteTitle}}"
-        />
-        <meta
-            property="og:description"
-            content="{{ $PageData.Frontmatter.Description }}"
-        />
-        <meta
-            property="og:image"
-            content="{{ $PageData.Frontmatter.PreviewImage }}"
-        />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ $PageData.Frontmatter.Title }}" />
+    <meta property="og:site_name" content="{{.DeepDataMerge.LayoutConfig.SiteTitle}}" />
+    <meta property="og:description" content="{{ $PageData.Frontmatter.Description }}" />
+    <meta property="og:image" content="{{ $PageData.Frontmatter.PreviewImage }}" />
 
-        <meta
-            name="description"
-            content="{{ $PageData.Frontmatter.Description }}"
-        />
-    </head>
-    {{end}}
+    <meta name="description" content="{{ $PageData.Frontmatter.Description }}" />
+</head>
+{{end}}
+
 </html>
