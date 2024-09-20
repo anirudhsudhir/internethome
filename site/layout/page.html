@@ -7,19 +7,24 @@
         {{template "header" .}}
         <div class="body">
 
-                {{if strSliceContains $PageData.Frontmatter.Collections "posts"}}
-                <h2>{{$PageData.Frontmatter.Title}}</h2>
+            <script>NekoType = "white"</script>
+            <h1 id=nl>
+                <script src="https://webneko.net/n20171213.js"></script><a href="https://webneko.net">Neko</a>
+            </h1>
+
+            {{if strSliceContains $PageData.Frontmatter.Collections "posts"}}
+            <h1 class="page-title-header">{{$PageData.Frontmatter.Title}}</h1>
+            {{end}}
+
+            <div class="tags-placeholder">
+                {{range $PageData.Frontmatter.Tags}}
+                <a href="/tags/{{.}}.html">
+                    {{.}}
+                </a>
                 {{end}}
+            </div>
 
-                <div class="tags-placeholder">
-                    {{range $PageData.Frontmatter.Tags}}
-                    <a href="/tags/{{.}}.html">
-                        {{.}}
-                    </a>
-                    {{end}}
-                </div>
-
-                {{$PageData.Body}}
+            {{$PageData.Body}}
 
         </div>
 

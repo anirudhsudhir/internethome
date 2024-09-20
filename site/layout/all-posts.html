@@ -8,29 +8,35 @@
     {{template "header" .}}
 
     <div class="body">
-        <div class="posts">
-          <h2>Posts</h2>
 
-          {{range $Post := index .DeepDataMerge.CollectionsMap .PageURL}}
-          <div class="post-card">
-            <div class="post-card-date">{{$Post.Frontmatter.Date}}</div>
-            <div class="post-card-link-and-description">
-              <a class="post-card-link" href="/{{$Post.CompleteURL}}">
-                {{$Post.Frontmatter.Title}}
-              </a>
-              <div class="post-card-description">{{$Post.Frontmatter.Description}}</div>
-            </div>
-            <div class="post-tags-placeholder">
-              {{range $Post.Frontmatter.Tags}}
-              <a href="/tags/{{.}}.html">
-                {{.}}
-              </a>
-              {{end}}
-            </div>
+      <script>NekoType = "white"</script>
+      <h1 id=nl>
+        <script src="https://webneko.net/n20171213.js"></script><a href="https://webneko.net">Neko</a>
+      </h1>
+
+      <div class="posts">
+        <h2>Posts</h2>
+
+        {{range $Post := index .DeepDataMerge.CollectionsMap .PageURL}}
+        <div class="post-card">
+          <div class="post-card-date">{{$Post.Frontmatter.Date}}</div>
+          <div class="post-card-link-and-description">
+            <a class="post-card-link" href="/{{$Post.CompleteURL}}">
+              {{$Post.Frontmatter.Title}}
+            </a>
+            <div class="post-card-description">{{$Post.Frontmatter.Description}}</div>
           </div>
-          {{end}}
-
+          <div class="post-tags-placeholder">
+            {{range $Post.Frontmatter.Tags}}
+            <a href="/tags/{{.}}.html">
+              {{.}}
+            </a>
+            {{end}}
+          </div>
         </div>
+        {{end}}
+
+      </div>
     </div>
 
     {{template "footer" .}}

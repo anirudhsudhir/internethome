@@ -24,6 +24,5 @@
   "author": "Anirudh Sudhir",
   "collectionLayouts": {
     "collections/posts.html": "all-posts"
-  },
-  "siteScripts": ["theme.js"]
+  }
 }

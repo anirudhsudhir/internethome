@@ -1,5 +1,5 @@
 ---
-title: Profiling with Go
+title: Profiling in Go
 date: 2024-04-13
 description: >
   Profiling and improving the performance of a Go application
