@@ -22,6 +22,7 @@
   "baseURL": "https://sudhir.live",
   "siteTitle": "Anirudh Sudhir",
   "author": "Anirudh Sudhir",
+  "siteScripts" : ["theme.js"],
   "collectionLayouts": {
     "collections/posts.html": "all-posts"
   }

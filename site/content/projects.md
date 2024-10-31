@@ -19,7 +19,7 @@ Link to the [blog](/posts/building-anna)
 
 ---
 
-[kvs](https://github.com/anirudhsudhir/kvs/)
+[hobbes](https://github.com/anirudhsudhir/hobbes/)
 
 A Bitcask-like log-structured key-value store with an in-memory index, written in Rust.
 

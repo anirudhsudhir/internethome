@@ -1,8 +1,7 @@
 :root {
-    /* Dark mode variables */
-    --background: #000000;
-    --primary-colour: #ffffe6;
-    --font-colour: #ffffffba;
+    --background: rgb(255, 252, 240);
+    --primary-colour: rgb(16, 15, 15);
+    --font-colour: var(--primary-colour);
     --heading-font-colour: var(--primary-colour);
     --postcard-link-colour: var(--primary-colour);
     --navbar-link-colour: var(--primary-colour);
@@ -11,14 +10,20 @@
 
     --h1-heading-font-size: 2.1rem;
     --navbar-font-size: 1.3rem;
-    --body-font-size: 1.2rem;
+    --body-font-size: 1.4rem;
     --code-font-size: 1rem;
     --post-link-font-size: 1.3rem;
+
+    --body-font-family: "EB Garamond", serif;
+    --heading-font-family: "Inter", sans-serif;
+    --post-card-heading-font-family: var(--heading-font-family);
+    --navbar-font-family: var(--heading-font-family);
 }
 
 /* Dark theme */
 [data-theme="dark"] {
-    /* --background: #000000; */
+    --background: rgb(16, 15, 15);
+    --primary-colour: rgb(206, 205, 195);
 }
 
 * {
@@ -30,7 +35,7 @@ body {
     height: 100vh;
 
     font-size: var(--body-font-size);
-    font-family: "IBM Plex Sans", sans-serif;
+    font-family: var(--body-font-family);
     font-weight: 400;
     font-style: normal;
 
@@ -95,20 +100,21 @@ nav {
     justify-content: space-between;
 }
 
-nav-links-search {
+.nav-links-search {
     display: flex;
     flex-direction: column;
 }
 
-nav-links {
+.nav-links {
     display: flex;
-    gap: 0.5em;
+    gap: 0.3em;
     flex-wrap: wrap;
     text-align: center;
 }
 
-nav-links a {
+.nav-links a {
     /* text-decoration: none; */
+    font-family: var(--navbar-font-family);
     font-size: var(--navbar-font-size);
     color: var(--navbar-link-colour);
 }
@@ -159,8 +165,8 @@ nav-links a {
 
 .post-card-date {
     font-size: calc(var(--body-font-size) - 0.2rem);
-    font-weight: 300;
 }
+
 
 .post-card-link-and-description {
     display: flex;
@@ -173,12 +179,8 @@ nav-links a {
 }
 
 .post-card a {
-    text-decoration: underline;
+    font-family: var(--post-card-heading-font-family);
     color: var(--postcard-link-colour);
-}
-
-.post-card a:hover {
-    text-decoration: underline;
 }
 
 .tags-placeholder,
@@ -187,13 +189,13 @@ nav-links a {
     align-content: center;
     flex-wrap: wrap;
     gap: 0.5em;
-    font-weight: 400;
 }
 
 .tags-placeholder a,
 .post-tags-placeholder a {
     color: var(--postcard-link-colour);
-    font-style: italic;
+    font-family: var(--body-font-family);
+    font-size: calc(var(--body-font-size) - 0.1rem);
 }
 
 .tags-placeholder {
@@ -205,7 +207,7 @@ nav-links a {
 }
 
 .tagpage-tags-placeholder a {
-    font-style: normal;
+    font-size: var(--body-font-size);
     color: var(--link-colour);
 }
 
@@ -213,9 +215,9 @@ nav-links a {
     color: var(--link-colour);
 }
 
-.page-title-header {
-  text-decoration: underline;
-}
+/* .page-title-header {
+    text-decoration: underline;
+} */
 
 img {
     width: 100%;
@@ -238,11 +240,8 @@ h3,
 h4,
 h5,
 h6 {
-    /* font-family: "Victor Mono", sans-serif;
-    font-style: italic;
-    font-weight: 400; */
-    font-family: "Gowun Batang", sans-serif;
-    font-weight: 600;
+    font-family: var(--heading-font-family);
+    font-weight: 400;
 
     margin: 0;
     color: var(--heading-font-colour);
@@ -316,16 +315,9 @@ code {
 }
 
 @media (max-width: 750px) {
-    :root {
-        --h1-heading-font-size: 2rem;
-        --navbar-font-size: 1.1rem;
-        --body-font-size: 1rem;
-        --code-font-size: 0.8rem;
-        --post-link-font-size: 1.1rem;
-    }
-
     .body-container {
-        padding: 15px 20px;
+        /* padding: 15px 20px; */
+        padding: 30px 20px 15px;
         width: auto;
     }
 
@@ -343,62 +335,10 @@ code {
     }
 }
 
-
-.theme-switch-wrapper {
-    display: flex;
-    align-items: center;
-
-    em {
-        margin-left: 10px;
-        font-size: 1rem;
-    }
-}
-
-.theme-switch {
-    display: inline-block;
-    height: 34px;
-    position: relative;
-    width: 60px;
-}
-
-.theme-switch input {
-    display: none;
-}
-
-.slider {
-    background-color: #ccc;
-    bottom: 0;
-    cursor: pointer;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transition: .4s;
-}
-
-.slider:before {
-    background-color: #fff;
-    bottom: 4px;
-    content: "";
-    height: 26px;
-    left: 4px;
-    position: absolute;
-    transition: .4s;
-    width: 26px;
-}
-
-input:checked+.slider {
-    background-color: #66bb6a;
-}
-
-input:checked+.slider:before {
-    transform: translateX(26px);
-}
-
-.slider.round {
-    border-radius: 34px;
-}
-
-.slider.round:before {
-    border-radius: 50%;
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
 }
