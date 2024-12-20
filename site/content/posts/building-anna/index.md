@@ -4,9 +4,6 @@ date: 2024-04-04
 description: A lightning-fast static site generator written in Go
 tags: ["acm", "hsp", "go", "tech", "talk", "aiep"]
 collections: ["posts"]
-toc: true
----
-
 ---
 
 > This post is WIP(work-in-progress) and has been authored by [Adhesh](https://github.com/DedLad), [Aditya](https://github.com/bwaklog), [Nathan](https://github.com/polarhive) and [Anirudh](https://github.com/anirudhsudhir).

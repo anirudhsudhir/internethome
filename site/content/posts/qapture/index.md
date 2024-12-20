@@ -5,9 +5,6 @@ description: >
   A CLI tool to recover deleted JPEGs from a forensic image
 tags: ["c", "hsp", "tech", "talk"]
 collections: ["posts"]
-toc: true
----
-
 ---
 
 This post is part of a talk I gave at the Mentor Expo conducted by [HSP](https://homebrew.hsp-ec.xyz), the developer community at my college. I delivered the talk on 23rd November, 2023.

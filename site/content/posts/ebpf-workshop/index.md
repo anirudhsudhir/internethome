@@ -4,7 +4,6 @@ date: 2024-09-05
 description: A workshop on eBPF that I co-hosted at university
 tags: ["eBPF", "HSP", "tech", "workshop"]
 collections: ["posts"]
-toc: true
 ---
 
 This post is a republish of the following [blog](https://homebrew.hsp-ec.xyz/posts/buzzing-with-ebpf/) that was written as part of an eBPF workshop that my friend [Navneet Nayak](https://github.com/NavneetNayak) and I held on 5th September 2024 at our university.
@@ -249,7 +248,7 @@ hello_kern.bpf.o:	file format elf64-bpf
 Disassembly of section raw_tracepoint/sys_enter:
 
 0000000000000000 <helloworld>:
-;   bpf_printk("Hello World!\n"); 
+;   bpf_printk("Hello World!\n");
        0:	18 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00	r1 = 0x0 ll
        2:	b7 02 00 00 0e 00 00 00	r2 = 0xe
        3:	85 00 00 00 06 00 00 00	call 0x6
@@ -374,13 +373,13 @@ int count_syscalls(void *ctx) {
 char LICENSE[] SEC("license") = "Dual BSD/GPL";
 ```
 
-Next, we need to compile and attach the program, to do this we can use the same commands we used for the 'Hello World' program (the ```clang``` and ```bpftool load``` commands). Just Make sure to remove the previously attached eBPF program:
+Next, we need to compile and attach the program, to do this we can use the same commands we used for the 'Hello World' program (the `clang` and `bpftool load` commands). Just Make sure to remove the previously attached eBPF program:
 
 ```bash
 sudo rm /sys/fs/bpf/prog
 ```
 
-Alternatively you can use the makefile provided in the github repository that will automatically do this compilation, by running the command ```sudo make```
+Alternatively you can use the makefile provided in the github repository that will automatically do this compilation, by running the command `sudo make`
 
 We can check whether the program has been successfully loaded and attached by using the command:
 

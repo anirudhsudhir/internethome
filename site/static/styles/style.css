@@ -8,14 +8,15 @@
     --link-colour: var(--primary-colour);
     --separator-colour: var(--primary-colour);
 
-    --h1-heading-font-size: 2.1rem;
-    --navbar-font-size: 1.3rem;
-    --body-font-size: 1.4rem;
-    --code-font-size: 1rem;
+    --h1-heading-font-size: 1.8rem;
+    --navbar-font-size: 1rem;
+    --body-font-size: 1.2rem;
+    --code-font-size: 0.9rem;
     --post-link-font-size: 1.3rem;
 
     --body-font-family: "EB Garamond", serif;
     --heading-font-family: "Inter", sans-serif;
+    --code-font-family: "JetBrains Mono", serif;
     --post-card-heading-font-family: var(--heading-font-family);
     --navbar-font-family: var(--heading-font-family);
 }
@@ -68,12 +69,12 @@ footer {
 
 header {
     padding-bottom: 10px;
-    border-bottom: 2px solid var(--separator-colour);
+    /* border-bottom: 2px solid var(--separator-colour); */
 }
 
 footer {
     padding: 10px 0 10px;
-    border-top: 2px solid var(--separator-colour);
+    /* border-top: 2px solid var(--separator-colour); */
     color: var(--font-colour);
     text-align: center;
 }
@@ -166,7 +167,6 @@ nav {
 .post-card-date {
     font-size: calc(var(--body-font-size) - 0.2rem);
 }
-
 
 .post-card-link-and-description {
     display: flex;
@@ -289,7 +289,6 @@ h6 {
     line-height: calc(var(--h1-heading-font-size) - 0.5rem);
 }
 
-
 blockquote {
     border-left: 5px var(--primary-colour) solid;
     margin-left: 0;
@@ -300,6 +299,7 @@ blockquote {
 }
 
 code {
+    font-family: var(--code-font-family);
     font-size: var(--code-font-size);
 }
 
@@ -337,8 +337,8 @@ code {
 
 .material-symbols-outlined {
     font-variation-settings:
-        'FILL' 0,
-        'wght' 400,
-        'GRAD' 0,
-        'opsz' 24
+        "FILL" 0,
+        "wght" 400,
+        "GRAD" 0,
+        "opsz" 24;
 }

@@ -7,12 +7,12 @@
     <nav>
         <div class="nav-links-search">
             <div class="nav-links">
-                {{range $index_no, $map := .DeepDataMerge.LayoutConfig.Navbar}} {{range
-                $key, $value := $map }}
+                {{range $index_no, $map := .DeepDataMerge.LayoutConfig.Navbar}}
+                {{range $key, $value := $map }}
                 <a class="navitem" href="/{{ $value }}">{{ $key }}</a>
                 {{ end }} {{end}}
             </div>
-            <div class="search">{{template "search" .}}</div>
+            <!-- <div class="search">{{template "search" .}}</div> -->
         </div>
 
         <!--  Theme Toggle-->
@@ -23,6 +23,5 @@
             </span>
         </span>
     </nav>
-
 </header>
 {{end}}

@@ -4,9 +4,6 @@ date: 2024-09-12
 description: Inspired by Bitcask
 tags: ["bitcask", "databases", "rust", "tech"]
 collections: ["posts"]
-toc: true
----
-
 ---
 
 ## Introduction
@@ -17,20 +14,19 @@ Link to the [Github Repo](https://github.com/anirudhsudhir/hobbes)
 
 I have been following the [PingCAP Talent Plan](https://github.com/pingcap/talent-plan/blob/master/courses/rust/README.md) guide. It breaks down the project into smaller building blocks and provides 5 sets of incremental tests. Highly recommended for learning about databases and Rust!
 
-> I presented a talk on this project at the October 2024 Rust Bangalore Meetup at Couchbase! The slides can be found [here](./bitcask_rust_meetup.pdf).
-
-<!-- <embed src="bitcask_rust_meetup.pdf" width="100%" height="8%" type="application/pdf" style="border: 1px solid black;"> -->
+> I presented a talk on this project at the October 2024 Rust Bangalore Meetup at Couchbase! The slides can be found [here](/assets/bitcask_rust_meetup_slides.pdf).
 
 ---
 
 ## What is Bitcask
 
-[The Bitcask paper](https://riak.com/assets/bitcask-intro.pdf)
+[The Bitcask paper](https://riak.com/assets/slides/bitcask-intro.pdf)
+
 <!-- > To be added -->
 
 ---
 
-<!-- # Initial Implementation 
+<!-- # Initial Implementation
 
 > WIP -->
 
@@ -57,8 +53,9 @@ Use a similar storage format as Bitcask - The storage directory will consist of 
 2. logs_dir - Path to the folder storing logs
 3. log_writer - A write handle to the active log
 4. log_readers - A collection of readers (HashMap`<u64, BufReader<File>>`) to access all logs
-    - This approach avoids the file open overhead associated with repeated GET commands
-    - A potential downside to this would be increased memory usage and OS limit on open file handles. Since the number of open files would not practically cross double digits, the extra memory usage is a useful tradeoff for fewer open and close operations.
+
+   - This approach avoids the file open overhead associated with repeated GET commands
+   - A potential downside to this would be increased memory usage and OS limit on open file handles. Since the number of open files would not practically cross double digits, the extra memory usage is a useful tradeoff for fewer open and close operations.
 
 5. current_log_id - The id of the active mutable log
 
@@ -93,7 +90,7 @@ Compaction is kicked off when a log size hits a certain threshold, such as 10kB.
 2. Replay the current logs and store the latest key-value pairs in a hashmap
 3. Persist the key-value pairs in an updated log such as 5_compacted.db
 
-    - Clone the existing index and insert or update entries
+   - Clone the existing index and insert or update entries
 
 4. Update KVStore
 

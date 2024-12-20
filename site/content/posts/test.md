@@ -5,6 +5,7 @@ description: >
   This page is a playground for the site css
 type: post
 draft: true
+toc: true
 ---
 
 # heading 1

@@ -5,9 +5,6 @@ description: >
   Profiling and improving the performance of a Go application
 tags: ["go", "meetup", "perf", "tech"]
 collections: ["posts"]
-toc: true
----
-
 ---
 
 This post contains notes from a hands-on talk during the Go Bangalore April meetup.

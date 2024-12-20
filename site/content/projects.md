@@ -5,9 +5,9 @@ description: >
   This page contains a description of the projects I've worked on
 ---
 
-All of my projects are hosted on Github at [anirudhsudhir](https://github.com/anirudhsudhir)
-
 # Projects
+
+All of my projects are hosted on Github at [anirudhsudhir](https://github.com/anirudhsudhir)
 
 [Anna](https://github.com/anna-ssg/Anna)
 
