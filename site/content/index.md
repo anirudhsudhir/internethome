@@ -14,14 +14,16 @@ A computer science student and tech enthusiast. Welcome to my home on the intern
 I'm a sophomore at PES University, Bangalore.
 I love exploring and building projects.
 
-My current interests include systems programming, distributed systems and databases and back-end development.
+Some of my interests include systems programming, distributed systems and databases and back-end development.
 
 <!-- > I'm currently on the lookout for internship opportunities. If you're hiring, please [reach](/contact.html) out.
 > Here's my [resume](/resume.pdf). -->
 
-### What I'm working on right now
+### Now
 
-- Building a Bitcask-style log-structured key-value store in Rust ([Link to repo](https://github.com/anirudhsudhir/hobbes/))
+- Working as a Systems Engineering Intern at [Bytebeam](https://www.bytebeam.io)
+- Reading and learning more about computers, particularly computer architecture, networking and operating systems
+- Hacking on the [MIT 6.5840 labs](https://pdos.csail.mit.edu/6.824/index.html) accompanying the graduate coursework on distributed systems, which includes a Raft implementation ([Link to repo](https://github.com/anirudhsudhir/mit_dist_sys_labs/))
 
 ### Guide to this site
 
@@ -30,3 +32,6 @@ My current interests include systems programming, distributed systems and databa
 - [POW](/pow.html) lists my proof of work
 - To quickly find posts of a specific category, head to the [tags](/tags.html) page
 - To reach out, visit the [contact](/contact.html) page
+- Use the theme toggle to switch between light and dark colorschemes
+
+PS: Click the cat on the top left of the page to have it follow your cursor or gestures (Click it again to stop)
