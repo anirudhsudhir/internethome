@@ -10,8 +10,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{{$PageData.Frontmatter.Title}}</title>
 
-        <link rel="stylesheet" href="/static/styles/style.css" />
-
         <!-- External Stylesheets and Plugins -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -37,6 +35,15 @@
             href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css"
         />
 
+        <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // document.querySelectorAll('pre code').forEach((el) => {
+            document.querySelectorAll('pre code').forEach((el) => {
+              hljs.highlightElement(el);
+            });
+          });
+        </script>
+
         <link
             rel="alternate"
             type="application/atom+xml"
@@ -49,6 +56,9 @@
             async
             src="//gc.zgo.at/count.js"
         ></script>
+
+        <!-- Loading the custom CSS at the end -->
+        <link rel="stylesheet" href="/static/styles/style.css" />
 
         <!-- Scripts filled in from plugins -->
         {{ if $PageData.LiveReload }}
@@ -74,6 +84,7 @@
                 "url": "https://sudhir.live/"
             }
         </script>
+
 
         <!-- Disabling dark reader extension on site -->
         <meta name="darkreader-lock" />
