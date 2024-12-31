@@ -108,7 +108,7 @@ nav {
 
 .nav-links {
     display: flex;
-    gap: 0.3em;
+    gap: 0.3rem;
     flex-wrap: wrap;
     text-align: center;
 }
@@ -171,7 +171,7 @@ nav {
 .post-card-link-and-description {
     display: flex;
     flex-direction: column;
-    gap: 0.5em;
+    gap: 0.5rem;
 }
 
 .post-card-link {
@@ -188,7 +188,7 @@ nav {
     display: flex;
     align-content: center;
     flex-wrap: wrap;
-    gap: 0.5em;
+    gap: 0.5rem;
 }
 
 .tags-placeholder a,
@@ -301,6 +301,10 @@ blockquote {
 code {
     font-family: var(--code-font-family);
     font-size: var(--code-font-size);
+}
+
+pre code.hljs {
+    scrollbar-width: none;
 }
 
 @media (max-width: 900px) {

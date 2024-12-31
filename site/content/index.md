@@ -22,6 +22,7 @@ My current interests include systems programming, distributed systems and databa
 ### What I'm working on right now
 
 - Building a Bitcask-style log-structured key-value store in Rust ([Link to repo](https://github.com/anirudhsudhir/hobbes/))
+- Working on the [MIT 6.5840 labs](https://pdos.csail.mit.edu/6.824/index.html) accompanying the graduate coursework on distributed systems, which includes a Raft implementation ([Link to repo](https://github.com/anirudhsudhir/mit_dist_sys_labs/))
 
 ### Guide to this site
 
