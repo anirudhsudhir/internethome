@@ -14,7 +14,7 @@ Link to the [Github Repo](https://github.com/anirudhsudhir/hobbes)
 
 I have been following the [PingCAP Talent Plan](https://github.com/pingcap/talent-plan/blob/master/courses/rust/README.md) guide. It breaks down the project into smaller building blocks and provides 5 sets of incremental tests. Highly recommended for learning about databases and Rust!
 
-> I presented a talk on this project at the October 2024 Rust Bangalore Meetup at Couchbase! The slides can be found [here](/assets/bitcask_rust_meetup_slides.pdf).
+> I presented a talk on this project at the October 2024 Rust Bangalore Meetup at Couchbase! [[Images](/pow.html#october)][[Slides](/assets/slides/bitcask_rust_meetup_slides.pdf)]
 
 <!-- ## What is Bitcask -->
 
