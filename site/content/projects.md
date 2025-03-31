@@ -7,26 +7,30 @@ description: >
 
 # Projects
 
-All of my projects are hosted on Github at [anirudhsudhir](https://github.com/anirudhsudhir)
+All my projects are hosted on Github at [anirudhsudhir](https://github.com/anirudhsudhir)
 
 ---
 
-#### [Anna](https://github.com/anna-ssg/Anna)
+###### [Anna](https://github.com/anna-ssg/Anna)
 
 A lightning-fast static site generator written in Go.
 This project is maintained by [Adhesh Athrey](https://github.com/DedLad), [Nathan Paul](https://github.com/polarhive), [Anirudh Sudhir](https://github.com/anirudhsudhir), and [Aditya Hegde](https://github.com/bwaklog)
 
 Link to the [blog](/posts/building-anna)
 
-#### [hobbes](https://github.com/anirudhsudhir/hobbes/)
+###### [Raft](https://github.com/anirudhsudhir/raft)
+
+A raft library in Go, with a distributed key-value store implementation.
+
+###### [Hobbes](https://github.com/anirudhsudhir/hobbes/)
 
 A Bitcask-like log-structured key-value store with an in-memory index, written in Rust.
 
-<!-- [Hermes](https://github.com/anirudhsudhir/hermes)
+###### [Snoopy](https://github.com/anirudhsudhir/snoopy)
 
-A concurrent web server written in Rust, with a simple thread pool implementation and graceful shutdown. -->
+A simple VPN written in Rust, currently in development.
 
-#### [Spidey-v2](https://github.com/anirudhsudhir/Spidey-v2)
+###### [Spidey](https://github.com/anirudhsudhir/Spidey-v2)
 
 A multi-threaded web crawler written in Go, capable of extremely fast crawl rates.
 It has a consistent crawl rate of over 10k links per minute.
@@ -34,11 +38,7 @@ On one test, Spidey discovered 16,000 links in a minute.
 
 This project is a rewrite of [Spidey](https://github.com/anirudhsudhir/Spidey).
 
-#### [Bingo](https://github.com/anirudhsudhir/Bingo)
-
-A server-side rendered pastebin written in Go with data persistence, middleware and sessions.
-
-#### [Qapture](https://github.com/anirudhsudhir/Qapture)
+###### [Qapture](https://github.com/anirudhsudhir/Qapture)
 
 A command-line tool written in C to recover deleted JPEGs from a forensic RAW image.
 

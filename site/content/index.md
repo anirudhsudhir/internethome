@@ -23,7 +23,7 @@ Some of my interests include systems programming, distributed systems and databa
 
 - Working as a Systems Engineering Intern at [Bytebeam](https://www.bytebeam.io)
 - Reading and learning more about computers, particularly computer architecture, networking and operating systems
-- Hacking on the [MIT 6.5840 labs](https://pdos.csail.mit.edu/6.824/index.html) accompanying the graduate coursework on distributed systems, which includes a Raft implementation ([Link to repo](https://github.com/anirudhsudhir/mit_dist_sys_labs/))
+- Writing a simple VPN in Rust ([Snoopy](https://github.com/anirudhsudhir/snoopy))
 
 ### Guide to this site
 
