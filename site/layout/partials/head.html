@@ -17,31 +17,48 @@
             href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
             rel="stylesheet"
         />
-
         <link
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=light_mode"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=light_mode&display=block"
         />
 
-        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.10.0/build/highlight.min.js"></script>
+        <script
+            src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/highlight.min.js"
+        ></script>
         <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.10.0/build/styles/tokyo-night-dark.min.css"
+            rel="preload"
+            href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/styles/tokyo-night-dark.min.css"
+            as="style"
+            onload="this.onload=null;this.rel='stylesheet'"
         />
+        <noscript
+            ><link
+                rel="stylesheet"
+                href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/styles/tokyo-night-dark.min.css"
+        /></noscript>
 
-        <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/highlightjs-copy@1.0.6/dist/highlightjs-copy.min.js"
+        ></script>
         <link
-            rel="stylesheet"
-            href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css"
+            rel="preload"
+            href="https://cdn.jsdelivr.net/npm/highlightjs-copy@1.0.6/dist/highlightjs-copy.min.css"
+            as="style"
+            onload="this.onload=null;this.rel='stylesheet'"
         />
+        <noscript
+            ><link
+                rel="stylesheet"
+                href="https://cdn.jsdelivr.net/npm/highlightjs-copy@1.0.6/dist/highlightjs-copy.min.css"
+        /></noscript>
 
         <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            // document.querySelectorAll('pre code').forEach((el) => {
-            document.querySelectorAll('pre code').forEach((el) => {
-              hljs.highlightElement(el);
+            document.addEventListener("DOMContentLoaded", (event) => {
+                // document.querySelectorAll('pre code').forEach((el) => {
+                document.querySelectorAll("pre code").forEach((el) => {
+                    hljs.highlightElement(el);
+                });
             });
-          });
         </script>
 
         <link
@@ -50,12 +67,6 @@
             title="feed"
             href="/feed.xml"
         />
-
-        <script
-            data-goatcounter="https://overuse2015.goatcounter.com/count"
-            async
-            src="//gc.zgo.at/count.js"
-        ></script>
 
         <!-- Loading the custom CSS at the end -->
         <link rel="stylesheet" href="/static/styles/style.css" />
@@ -81,10 +92,9 @@
                 "@type": "WebSite",
                 "name": "{{.DeepDataMerge.LayoutConfig.SiteTitle}}",
                 // Change if site URL is changed
-                "url": "https://sudhir.live/"
+                "url": "https://anirudhsudhir.com/"
             }
         </script>
-
 
         <!-- Disabling dark reader extension on site -->
         <meta name="darkreader-lock" />

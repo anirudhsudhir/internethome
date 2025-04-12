@@ -105,7 +105,7 @@ Later, we implemented a front matter YAML parser to retrieve page metadata
   and not worrying about our toolchain or escaping dependency hell.
 
 - Owning a piece of the internet: Aditya and Anirudh registered their own domain names.
-  Now their anna sites live on [hegde.live](https://hegde.live) and [sudhir.live](https://sudhir.live).
+  Now their anna sites live on [adiheg.netlify.app](https://adiheg.netlify.app) and [anirudhsudhir.com](https://anirudhsudhir.com).
 
 ---
 
@@ -338,6 +338,6 @@ Have a look at our [GitHub](https://github.com/anna-ssg/anna/issues), for more
 ---
 
 Today, we use [anna](https://github.com/anna-ssg/anna/releases/latest) on our personal sites:
-[hegde.live](https://hegde.live) // [sudhir.live](https://sudhir.live) // [polarhive.net](https://polarhive.net)
+[adiheg.netlify.app](https://adiheg.netlify.app) // [anirudhsudhir.com](https://anirudhsudhir.com) // [polarhive.net](https://polarhive.net)
 
 01100001 01101110 01101110 01100001
