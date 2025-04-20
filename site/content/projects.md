@@ -30,6 +30,10 @@ A Bitcask-like log-structured key-value store with an in-memory index, written i
 
 A simple VPN written in Rust, currently in development.
 
+###### [sqlite-parser](https://github.com/anirudhsudhir/sqlite-parser)
+
+A parser for SQLite3 DB files, written in Rust.
+
 ###### [Spidey](https://github.com/anirudhsudhir/Spidey-v2)
 
 A multi-threaded web crawler written in Go, capable of extremely fast crawl rates.
@@ -37,6 +41,10 @@ It has a consistent crawl rate of over 10k links per minute.
 On one test, Spidey discovered 16,000 links in a minute.
 
 This project is a rewrite of [Spidey](https://github.com/anirudhsudhir/Spidey).
+
+##### [tls-wss-server-client](https://github.com/anirudhsudhir/tls-wss-server-client)
+
+A TLS and WSS server and client in Rust using rustls and tokio-tungstenite.
 
 ###### [Qapture](https://github.com/anirudhsudhir/Qapture)
 

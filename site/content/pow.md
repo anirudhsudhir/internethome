@@ -6,6 +6,23 @@ description: >
 toc: true
 ---
 
+## 2025
+
+#### February - April
+
+- Interned as a Systems Engineer at [Bytebeam](https://www.bytebeam.io), where I worked on the next-generation of [rumqttc](https://github.com/bytebeamio/rumqtt), a Rust-based MQTT client.
+- Redesigned the architecture for the transport layer of rumqttc and implemented it with tests, for optimised memory usage and a simpler interface.
+
+![Intern at Bytebeam](/assets/images/intern_bytebeam.jpeg)
+
+#### March
+
+- Delivered a lightning talk on [Snoopy](https://github.com/anirudhsudhir/snoopy/), a simple VPN written in Rust, during the March 2025 Bengaluru Systems Meetup - Lightning Talks Edition.
+
+- [https://x.com/anirudh_sudhir/status/1905897072731247078?t=9a8V9m8E3YcRDWNzxNExlA](https://x.com/anirudh_sudhir/status/1905897072731247078?t=9a8V9m8E3YcRDWNzxNExlA)
+
+![Snoopy Presentation](/assets/images/blr_sys_meetup_mar25_snoopy.jpg)
+
 ## 2024
 
 #### October
