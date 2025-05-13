@@ -1,7 +1,7 @@
 ---
-title: Buzzing with eBPF
+title: "Buzzing with eBPF: A workshop on eBPF that I co-hosted at university"
 date: 2024-09-05
-description: A workshop on eBPF that I co-hosted at university
+description: "A workshop on eBPF that I co-hosted at university"
 tags: ["eBPF", "HSP", "tech", "workshop"]
 collections: ["posts"]
 ---

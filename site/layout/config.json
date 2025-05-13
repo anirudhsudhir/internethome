@@ -4,13 +4,13 @@
       "Home": "index.html"
     },
     {
+      "POW": "pow.html"
+    },
+    {
       "Posts": "collections/posts.html"
     },
     {
       "Projects": "projects.html"
-    },
-    {
-      "POW": "pow.html"
     },
     {
       "Tags": "tags.html"
@@ -22,7 +22,7 @@
   "baseURL": "https://anirudhsudhir.com",
   "siteTitle": "Anirudh Sudhir",
   "author": "Anirudh Sudhir",
-  "siteScripts" : ["theme.js"],
+  "siteScripts": ["theme.js"],
   "collectionLayouts": {
     "collections/posts.html": "all-posts"
   }

@@ -1,5 +1,5 @@
 ---
-title: Genesis
+title: "Genesis"
 date: 2024-03-08
 description: >
   My first post

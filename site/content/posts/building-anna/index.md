@@ -1,7 +1,7 @@
 ---
-title: Building anna
+title: "Building anna: A lightning-fast static site generator written in Go"
 date: 2024-04-04
-description: A lightning-fast static site generator written in Go
+description: "A lightning-fast static site generator written in Go"
 tags: ["acm", "hsp", "go", "tech", "talk", "aiep"]
 collections: ["posts"]
 ---

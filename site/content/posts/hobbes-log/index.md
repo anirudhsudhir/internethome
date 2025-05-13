@@ -1,5 +1,5 @@
 ---
-title: Building a log-structured key-value store in Rust
+title: "Bitcask: Building a log-structured key-value store in Rust"
 date: 2024-09-12
 description: Inspired by Bitcask
 tags: ["bitcask", "databases", "rust", "tech"]
@@ -12,13 +12,15 @@ This blog is about Hobbes, a log structured key-value store that I’ve been wor
 
 Link to the [Github Repo](https://github.com/anirudhsudhir/hobbes)
 
+[The Bitcask paper](https://riak.com/assets/slides/bitcask-intro.pdf)
+
 I have been following the [PingCAP Talent Plan](https://github.com/pingcap/talent-plan/blob/master/courses/rust/README.md) guide. It breaks down the project into smaller building blocks and provides 5 sets of incremental tests. Highly recommended for learning about databases and Rust!
 
-> I presented a talk on this project at the October 2024 Rust Bangalore Meetup at Couchbase! [[Images](/pow.html#october)][[Slides](/assets/slides/bitcask_rust_meetup_slides.pdf)]
+> I presented a talk on this project at the October 2024 Rust Bangalore Meetup at Couchbase! [[Slides](/assets/slides/bitcask_rust_meetup_slides.pdf)]
+
+![Bitcask Rust meetup Couchbase](/assets/images/rust_meetup_oct24_anirudh.jpg)
 
 <!-- ## What is Bitcask -->
-
-[The Bitcask paper](https://riak.com/assets/slides/bitcask-intro.pdf)
 
 <!-- > To be added -->
 
@@ -142,8 +144,8 @@ The earlier compaction algorithm compacted key-value pairs in a single log only.
 
 Multi-log compaction utilises the following approach. Firstly, a subdirectory is created for compacted logs. This leads to two different states of the DB:
 
-   1. an active "logs/" directory that is used for reads and writes
-   2. a "compacted-logs/" directory that stores the compacted logs
+1.  an active "logs/" directory that is used for reads and writes
+2.  a "compacted-logs/" directory that stores the compacted logs
 
 Instead of reading and replaying all the logs on disk, the index is used to obtain the latest key-value pairs since it holds the current state of the DB in Bitcask. Hobbes iterates and performs a GET for each key in the index. This involved refactoring the GET function to use a new helper:
 
@@ -157,7 +159,7 @@ The keys and values are then flushed to new logs in the "compacted-logs/" direct
 
 The key along with its updated metadata is then inserted into the updated index.
 
-Before writing each entry, the size of the active compacted log is checked. If it  equals or exceeds the maximum permitted log size, the current log is closed and a new log is created. Each log is named numerically in ascending order, such as "compacted-logs/1.db", "compacted-logs/2.db" and so on.
+Before writing each entry, the size of the active compacted log is checked. If it equals or exceeds the maximum permitted log size, the current log is closed and a new log is created. Each log is named numerically in ascending order, such as "compacted-logs/1.db", "compacted-logs/2.db" and so on.
 
 Once the compacted keys are flushed to disk and inserted into the updated index, the database state is updated. The existing readers and writers are removed, "compacted-logs/" is renamed to "logs/" (overwriting the older uncompacted logs) and the active log id and index is updated.
 
@@ -210,7 +212,7 @@ fn log_writer_init(&mut self) -> Result<()>
 
 ### Benchmark Results
 
-The benchmark for Hobbes was fixed, allowing for performance comparisons with sled. The benchmark involves storing 500 random keys of the form, "KEY_<rand_num> = VALUE_<rand_num>", such as "KEY_124 = VALUE_124". All the keys are then retrieved and checked.
+The benchmark for Hobbes was fixed, allowing for performance comparisons with sled. The benchmark involves storing 500 random keys of the form, "KEY*<rand_num> = VALUE*<rand_num>", such as "KEY_124 = VALUE_124". All the keys are then retrieved and checked.
 
 First, SETs for Hobbes and sled are benched, followed by GETs, using [criterion](https://github.com/bheisler/criterion.rs).
 
@@ -225,7 +227,5 @@ Benchmark results for a 500 key set and 100 kb log size limit
 Benchmark results for a 500 key set and 10 kb log size limit
 
 ![Benchmark results for a 500 key set and 10 kb log size limit](images/bench_500keys_compaction_10kb.png)
-
-Currently, the single-threaded Hobbes bitcask engine is much slower than sled.
 
 ---

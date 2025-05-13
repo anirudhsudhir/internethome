@@ -1,5 +1,5 @@
 ---
-title: Qapture
+title: "Qapture: A CLI tool to recover deleted JPEGs from a forensic image"
 date: 2024-03-09
 description: >
   A CLI tool to recover deleted JPEGs from a forensic image

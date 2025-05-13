@@ -12,10 +12,10 @@
       <article>
         <div class="all-tags">
           <h2>Tags</h2>
-          <div class="post-tags-placeholder tagpage-tags-placeholder">
+          <div class="tagpage-tags-placeholder">
 
             {{range .TagNames}}
-            <a href="tags/{{.}}.html">{{.}}</a>
+            <a class="tagpage-individual-tag-container" href="tags/{{.}}.html">#{{.}}</a>
             {{end}}
 
           </div>
